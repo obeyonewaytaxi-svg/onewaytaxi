@@ -1,0 +1,270 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-brand-secondary: 245 197 24;
+    --color-brand-text: 17 24 39;
+    --font-heading: 'Plus Jakarta Sans', ui-sans-serif, system-ui, sans-serif;
+    --font-body: 'Inter', ui-sans-serif, system-ui, sans-serif;
+    --font-numbers: 'Space Grotesk', monospace;
+    --section-spacing: 6rem;
+    --section-spacing-lg: 8.75rem;
+    --container-max: 1280px;
+    --container-padding: 1.25rem;
+    --header-height: 72px;
+    color-scheme: light;
+    font-family: var(--font-body);
+    background-color: #ffffff;
+    color: #111827;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  @media (min-width: 640px) {
+    :root { --container-padding: 2.5rem; }
+  }
+
+  @media (min-width: 1024px) {
+    :root { --container-padding: 5rem; }
+  }
+
+  @media (min-width: 1280px) {
+    :root { --container-padding: 0; }
+  }
+
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: var(--header-height);
+  }
+
+  body {
+    min-height: 100vh;
+    background: #ffffff;
+    color: #111827;
+    overflow-x: hidden;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  ::selection {
+    background: rgba(245, 197, 24, 0.25);
+    color: #111827;
+  }
+
+  button, input, select, textarea {
+    font: inherit;
+  }
+
+  #root {
+    isolation: isolate;
+  }
+
+  img, video {
+    max-width: 100%;
+    height: auto;
+  }
+
+  :focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 2px #ffffff, 0 0 0 4px #0f172a;
+    border-radius: 4px;
+  }
+}
+
+@layer components {
+  .text-gradient {
+    background: linear-gradient(135deg, #111827 0%, #374151 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .text-gradient-brand {
+    background: linear-gradient(135deg, #F5C518 0%, #e6b316 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .glass {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+  }
+
+  .glass-strong {
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+  }
+
+  .hover-lift {
+    transition: transform 0.25s cubic-bezier(0.33, 1, 0.68, 1),
+                box-shadow 0.25s cubic-bezier(0.33, 1, 0.68, 1);
+  }
+
+  .hover-lift:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08), 0 2px 8px rgba(0, 0, 0, 0.04);
+  }
+
+  .section-heading {
+    @apply font-heading text-display-sm md:text-display font-bold tracking-tight;
+  }
+
+  .section-subtitle {
+    @apply text-base md:text-lg text-brand-muted leading-relaxed max-w-2xl;
+  }
+}
+
+@layer utilities {
+  .container-app {
+    @apply mx-auto w-full max-w-7xl px-5 md:px-8 lg:px-10 xl:px-0;
+  }
+
+  .animate-taxi-drive {
+    animation: taxi-drive 16s linear infinite;
+    will-change: transform;
+  }
+
+  .animate-taxi-bob {
+    animation: taxi-bob 0.6s ease-in-out infinite;
+    transform-origin: 50% 100%;
+    will-change: transform;
+  }
+
+  .animate-taxi-shadow {
+    animation: taxi-shadow 0.6s ease-in-out infinite;
+  }
+
+  .animate-headlight {
+    animation: headlight-glow 1.6s ease-in-out infinite;
+  }
+
+  .animate-road-stripes {
+    background-image: repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.45) 0 22px, transparent 22px 44px);
+    animation: road-scroll 0.5s linear infinite;
+  }
+
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+  }
+}
+
+@keyframes taxi-drive {
+  from { transform: translateX(-200px); }
+  to { transform: translateX(calc(100vw + 200px)); }
+}
+
+@keyframes taxi-bob {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  35% { transform: translateY(-2px) rotate(-0.8deg); }
+  70% { transform: translateY(-1px) rotate(0.5deg); }
+}
+
+@keyframes taxi-shadow {
+  0%, 100% { transform: translateX(-50%) scaleX(1); opacity: 0.35; }
+  35% { transform: translateX(-50%) scaleX(0.94); opacity: 0.28; }
+  70% { transform: translateX(-50%) scaleX(1.04); opacity: 0.4; }
+}
+
+@keyframes headlight-glow {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 0.85; }
+}
+
+@keyframes road-scroll {
+  from { background-position-x: 0; }
+  to { background-position-x: -44px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-taxi-drive,
+  .animate-taxi-bob,
+  .animate-taxi-shadow,
+  .animate-headlight,
+  .animate-road-stripes {
+    animation: none;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f8f8f8;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #d1d5db;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #9ca3af;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Google Places Autocomplete dropdown */
+.pac-container {
+  font-family: 'Inter', sans-serif !important;
+  border-radius: 12px !important;
+  border: 1px solid #e5e7eb !important;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08) !important;
+  margin-top: 4px !important;
+  overflow: hidden !important;
+}
+
+.pac-item {
+  padding: 10px 14px !important;
+  font-size: 14px !important;
+  border-bottom: 1px solid #f3f4f6 !important;
+  line-height: 1.5 !important;
+}
+
+.pac-item:hover,
+.pac-item.pac-item-selected {
+  background-color: rgba(245, 197, 24, 0.08) !important;
+}
+
+.pac-item .pac-matched {
+  color: #111827 !important;
+  font-weight: 600 !important;
+}
+
+.pac-icon {
+  display: none !important;
+}
+
+.pac-container::after {
+  content: 'Powered by Google' !important;
+  display: block !important;
+  text-align: right !important;
+  font-size: 10px !important;
+  color: #9ca3af !important;
+  padding: 4px 10px !important;
+  background: #fafafa !important;
+}

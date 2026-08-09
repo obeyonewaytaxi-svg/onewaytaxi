@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0F172A" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "LocalBusiness",
+            "@id": "https://obeyonewaytaxi.com/#localbusiness",
+            "name": "Obey One Way Taxi",
+            "description": "Premium one-way taxi service in Tamil Nadu and South India with instant booking, transparent pricing, and verified drivers.",
+            "image": "https://obeyonewaytaxi.com/branding-image.png",
+            "telephone": "+918667219259",
+            "email": "hello@obeyonewaytaxi.com",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Chennai",
+              "addressRegion": "Tamil Nadu",
+              "addressCountry": "IN"
+            },
+            "areaServed": "South India",
+            "url": "https://obeyonewaytaxi.com/",
+            "priceRange": "₹₹",
+            "openingHoursSpecification": [
+              {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": [
+                  "Monday",
+                  "Tuesday",
+                  "Wednesday",
+                  "Thursday",
+                  "Friday",
+                  "Saturday",
+                  "Sunday"
+                ],
+                "opens": "00:00",
+                "closes": "23:59"
+              }
+            ]
+          },
+          {
+            "@type": "TaxiService",
+            "serviceType": "One Way Taxi",
+            "provider": {
+              "@id": "https://obeyonewaytaxi.com/#localbusiness"
+            },
+            "areaServed": "South India"
+          },
+          {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://obeyonewaytaxi.com/" }
+            ]
+          },
+          {
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "How do I book a one-way taxi?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Choose pickup and drop locations, select a cab type, set the date and time, then send the booking request via WhatsApp for instant confirmation."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Are tolls and parking charges included?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Tolls and parking are included in the final fare for most routes, and we provide a transparent estimate before you confirm your booking."
+                }
+              }
+            ]
+          }
+        ]
+      }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="apple-touch-icon" type="image/png" href="/favicon.png" />
+    <link rel="preload" as="image" href="/logo.png" fetchpriority="high" />
+  </head>
+  <body class="bg-slate-50 text-slate-950">
+    <div id="root"></div>
+    <script type="module" src="src/main.tsx"></script>
+  </body>
+</html>

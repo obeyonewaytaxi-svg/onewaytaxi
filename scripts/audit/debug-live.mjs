@@ -1,0 +1,12 @@
+const u = 'https://obeyonewaytaxi.com/';
+const r = await fetch(u, { headers: { 'user-agent': 'audit' } });
+const b = await r.text();
+console.log('bytes', b.length);
+console.log('has <h1:', b.includes('<h1'));
+const m = b.match(/<h1[^>]*>[\s\S]*?<\/h1>/);
+console.log('regex H1:', m ? m[0].slice(0, 100) : 'FAIL');
+const rm = b.match(/<meta[^>]*name=["']robots["'][^>]*>/gi);
+console.log('robots meta tags:', rm ? rm.join(' | ') : 'NONE');
+const h1count = (b.match(/<h1[^>]*>/gi) || []).length;
+console.log('h1 open tag count:', h1count);
+console.log('title:', (b.match(/<title>([\s\S]*?)<\/title>/) || [])[1]);

@@ -1,0 +1,332 @@
+[
+  {
+    "name": "A1 booking name field present",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "name": "A2 empty submit shows name+phone errors",
+    "ok": true,
+    "detail": "{\"name\":true,\"phone\":true}"
+  },
+  {
+    "name": "A3 no WhatsApp opened on invalid submit",
+    "ok": true,
+    "detail": "opened=0"
+  },
+  {
+    "name": "A4 invalid phone shows error",
+    "ok": true,
+    "detail": "phoneErr=true"
+  },
+  {
+    "name": "A5 same pickup/drop blocked",
+    "ok": true,
+    "detail": "err shown"
+  },
+  {
+    "name": "A6 return date shown only for round trip",
+    "ok": true,
+    "detail": "before=false after=true"
+  },
+  {
+    "name": "A7 valid submit opens WhatsApp w/ details",
+    "ok": true,
+    "detail": "url=https://wa.me/918667219259?text=Hello%20Obey%20One%20Way%20Taxi%2C%0A%0AI%20would%20like%2"
+  },
+  {
+    "name": "A0 no console errors on home booking flow",
+    "ok": true,
+    "detail": "clean"
+  },
+  {
+    "name": "B1 typing shows suggestions",
+    "ok": true,
+    "detail": "first=BangalorePopular taxi route city"
+  },
+  {
+    "name": "B2 selecting suggestion fills input",
+    "ok": true,
+    "detail": "value=Bangalore"
+  },
+  {
+    "name": "B3 unaccepted city blocked on submit",
+    "ok": true,
+    "detail": "err shown"
+  },
+  {
+    "name": "B4 swap swaps values",
+    "ok": true,
+    "detail": "{\"pickup\":\"Xyzville\",\"drop\":\"Bangalore\"}"
+  },
+  {
+    "name": "B5 mobile menu opens",
+    "ok": true,
+    "detail": "visible=true open=true"
+  },
+  {
+    "name": "B6 mobile menu link navigates + closes",
+    "ok": true,
+    "detail": "url=http://localhost:4173/tariff menuGone=true"
+  },
+  {
+    "name": "C1 default fare shown",
+    "ok": true,
+    "detail": "selects=[\"Chennai\",\"Coimbatore\",\"One Way\",\"SEDAN\"] fare=₹7,825 num=7825"
+  },
+  {
+    "name": "C2 drop change updates fare",
+    "ok": true,
+    "detail": "drop=Madurai fare=₹6,925 changed=true"
+  },
+  {
+    "name": "C3 swap cities",
+    "ok": true,
+    "detail": "pickup=Madurai drop=Chennai"
+  },
+  {
+    "name": "C4 same city error + disabled",
+    "ok": true,
+    "detail": "{\"err\":true,\"disabled\":true}"
+  },
+  {
+    "name": "C5 cab change updates fare",
+    "ok": true,
+    "detail": "fare=₹9,100"
+  },
+  {
+    "name": "C5 no console errors",
+    "ok": true,
+    "detail": "clean"
+  },
+  {
+    "name": "D1 services dropdown opens",
+    "ok": true,
+    "detail": "clicked=true dropdown=true"
+  },
+  {
+    "name": "D2 services dropdown navigates",
+    "ok": true,
+    "detail": "url=http://localhost:4173/services/round-trip"
+  },
+  {
+    "name": "D3 header has WA + tel links",
+    "ok": true,
+    "detail": "wa=true tel=tel:+918667219259"
+  },
+  {
+    "name": "E1 closed accordion button found",
+    "ok": true,
+    "detail": "{\"text\":\"Are tolls and parking charges included?Tolls and parking are\",\"expanded\":\"false\"}"
+  },
+  {
+    "name": "E2 clicking expands",
+    "ok": true,
+    "detail": "expanded=Are tolls and parking charges included?"
+  },
+  {
+    "name": "E3 clicking again collapses",
+    "ok": true,
+    "detail": "collapsed=true"
+  },
+  {
+    "name": "F1 contact empty submit blocked (native required + no WhatsApp)",
+    "ok": true,
+    "detail": "{\"name\":false,\"phone\":false,\"msg\":false,\"opened\":0,\"hasForm\":true}"
+  },
+  {
+    "name": "F2 valid contact submit opens WhatsApp",
+    "ok": true,
+    "detail": "url=https://wa.me/918667219259?text=New%20booking%20enquiry%3A%0AName%3A%20Test%20User%0APhone"
+  },
+  {
+    "name": "F2 no console errors",
+    "ok": true,
+    "detail": "clean"
+  },
+  {
+    "name": "G0 scroll-top button renders after scroll",
+    "ok": true,
+    "detail": "label=null"
+  },
+  {
+    "name": "G1 scroll-top appears after scroll",
+    "ok": true,
+    "detail": "visible=true"
+  },
+  {
+    "name": "G2 scroll-top scrolls to top",
+    "ok": true,
+    "detail": "scrollY=0"
+  },
+  {
+    "name": "H1 tab focus lands on element",
+    "ok": true,
+    "detail": "{\"tag\":\"A\",\"cls\":\"rounded-lg px-3.5 py-2 text-[13px] font-medium transition-all duration-200 text-\",\"outlineStyle\":\"none\",\"outlineWidth\":\"3px\",\"boxShadow\":\"rgb(255, 255, 255) 0px 0px 0px 2px, rgb(15, 23, 42) 0px 0px \"}"
+  },
+  {
+    "name": "H2 focus has visible ring",
+    "ok": true,
+    "detail": "boxShadow=rgb(255, 255, 255) 0px 0px 0px 2px, rgb(15, 23, 42) 0px 0px "
+  },
+  {
+    "name": "I breakpoint 390px /",
+    "ok": true,
+    "detail": "scrollW=390 ok"
+  },
+  {
+    "name": "I breakpoint 390px /fleet",
+    "ok": true,
+    "detail": "scrollW=390 ok"
+  },
+  {
+    "name": "I breakpoint 390px /routes",
+    "ok": true,
+    "detail": "scrollW=390 ok"
+  },
+  {
+    "name": "I breakpoint 390px /contact",
+    "ok": true,
+    "detail": "scrollW=390 ok"
+  },
+  {
+    "name": "I breakpoint 390px /fare-calculator",
+    "ok": true,
+    "detail": "scrollW=390 ok"
+  },
+  {
+    "name": "I breakpoint 390px /cities",
+    "ok": true,
+    "detail": "scrollW=390 ok"
+  },
+  {
+    "name": "I breakpoint 390px /tariff",
+    "ok": true,
+    "detail": "scrollW=390 ok"
+  },
+  {
+    "name": "I breakpoint 390px /reviews",
+    "ok": true,
+    "detail": "scrollW=390 ok"
+  },
+  {
+    "name": "I breakpoint 768px /",
+    "ok": true,
+    "detail": "scrollW=768 ok"
+  },
+  {
+    "name": "I breakpoint 768px /fleet",
+    "ok": true,
+    "detail": "scrollW=768 ok"
+  },
+  {
+    "name": "I breakpoint 768px /routes",
+    "ok": true,
+    "detail": "scrollW=768 ok"
+  },
+  {
+    "name": "I breakpoint 768px /contact",
+    "ok": true,
+    "detail": "scrollW=768 ok"
+  },
+  {
+    "name": "I breakpoint 768px /fare-calculator",
+    "ok": true,
+    "detail": "scrollW=768 ok"
+  },
+  {
+    "name": "I breakpoint 768px /cities",
+    "ok": true,
+    "detail": "scrollW=768 ok"
+  },
+  {
+    "name": "I breakpoint 768px /tariff",
+    "ok": true,
+    "detail": "scrollW=768 ok"
+  },
+  {
+    "name": "I breakpoint 768px /reviews",
+    "ok": true,
+    "detail": "scrollW=768 ok"
+  },
+  {
+    "name": "I breakpoint 1024px /",
+    "ok": true,
+    "detail": "scrollW=1024 ok"
+  },
+  {
+    "name": "I breakpoint 1024px /fleet",
+    "ok": true,
+    "detail": "scrollW=1024 ok"
+  },
+  {
+    "name": "I breakpoint 1024px /routes",
+    "ok": true,
+    "detail": "scrollW=1024 ok"
+  },
+  {
+    "name": "I breakpoint 1024px /contact",
+    "ok": true,
+    "detail": "scrollW=1024 ok"
+  },
+  {
+    "name": "I breakpoint 1024px /fare-calculator",
+    "ok": true,
+    "detail": "scrollW=1024 ok"
+  },
+  {
+    "name": "I breakpoint 1024px /cities",
+    "ok": true,
+    "detail": "scrollW=1024 ok"
+  },
+  {
+    "name": "I breakpoint 1024px /tariff",
+    "ok": true,
+    "detail": "scrollW=1024 ok"
+  },
+  {
+    "name": "I breakpoint 1024px /reviews",
+    "ok": true,
+    "detail": "scrollW=1024 ok"
+  },
+  {
+    "name": "I breakpoint 1366px /",
+    "ok": true,
+    "detail": "scrollW=1366 ok"
+  },
+  {
+    "name": "I breakpoint 1366px /fleet",
+    "ok": true,
+    "detail": "scrollW=1366 ok"
+  },
+  {
+    "name": "I breakpoint 1366px /routes",
+    "ok": true,
+    "detail": "scrollW=1366 ok"
+  },
+  {
+    "name": "I breakpoint 1366px /contact",
+    "ok": true,
+    "detail": "scrollW=1366 ok"
+  },
+  {
+    "name": "I breakpoint 1366px /fare-calculator",
+    "ok": true,
+    "detail": "scrollW=1366 ok"
+  },
+  {
+    "name": "I breakpoint 1366px /cities",
+    "ok": true,
+    "detail": "scrollW=1366 ok"
+  },
+  {
+    "name": "I breakpoint 1366px /tariff",
+    "ok": true,
+    "detail": "scrollW=1366 ok"
+  },
+  {
+    "name": "I breakpoint 1366px /reviews",
+    "ok": true,
+    "detail": "scrollW=1366 ok"
+  }
+]
