@@ -20,10 +20,14 @@ const HomePage = () => (
       description="Book a drop taxi or one way taxi across Tamil Nadu & South India. Transparent fares, no return fare, verified drivers and 24/7 outstation cab service."
       keywords={[
         'drop taxi',
+        'droptaxi',
         'one way taxi',
+        'oneway taxi',
         'one way drop cab',
         'outstation cab service',
         'drop taxi near me',
+        'drop taxi booking',
+        'red taxi alternative',
         'one way car rental',
         'cheap one way cab',
         'no return fare taxi',

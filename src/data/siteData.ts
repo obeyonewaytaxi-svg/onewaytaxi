@@ -234,6 +234,16 @@ export const faqs: FaqItem[] = [
     answer:
       'Yes, we operate 24×7 including public holidays. Airport pickups and night drives are handled by dedicated night-shift drivers.',
   },
+  {
+    question: 'How does Obey One Way Taxi compare with other drop taxi services like Red Taxi?',
+    answer:
+      'Obey One Way Taxi specializes in intercity drop taxi and outstation rides across Tamil Nadu and South India with transparent per-km rates (Sedan ₹15/km, SUV ₹20/km), zero return fare, verified chauffeurs, and 24/7 instant WhatsApp booking.',
+  },
+  {
+    question: 'What is a drop taxi and why choose Obey One Way Taxi?',
+    answer:
+      'A drop taxi (or one-way cab) allows you to pay only for your single-direction trip without paying for the driver’s return journey. Obey One Way Taxi provides flat per-km pricing, doorstep pickup, and guaranteed clean cars across all major Tamil Nadu cities.',
+  },
 ];
 
 export const reviews: Review[] = [
