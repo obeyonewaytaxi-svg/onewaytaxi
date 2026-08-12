@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 import { Seo } from '../lib/seo';
-import { localBusinessSchema } from '../lib/schema';
+import { localBusinessSchema, webSiteSchema, organizationSchema, faqSchema } from '../lib/schema';
 import { Hero } from '../components/shared/Hero';
 import { StatsBar } from '../components/shared/StatsBar';
 import { RouteGrid } from '../components/shared/RouteGrid';
@@ -33,7 +33,12 @@ const HomePage = () => (
         'no return fare taxi',
         '24/7 outstation taxi',
       ]}
-      jsonLd={localBusinessSchema()}
+      jsonLd={[
+        localBusinessSchema(),
+        webSiteSchema(),
+        organizationSchema(),
+        faqSchema(faqs)
+      ]}
     />
     <Hero />
     <PricingSection />

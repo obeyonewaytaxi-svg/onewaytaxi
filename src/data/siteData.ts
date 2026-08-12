@@ -240,6 +240,11 @@ export const faqs: FaqItem[] = [
       'Obey One Way Taxi specializes in intercity drop taxi and outstation rides across Tamil Nadu and South India with transparent per-km rates (Sedan ₹15/km, SUV ₹20/km), zero return fare, verified chauffeurs, and 24/7 instant WhatsApp booking.',
   },
   {
+    question: 'Why choose Obey One Way Taxi instead of Red Taxi for outstation drop cabs?',
+    answer:
+      'While Red Taxi is excellent for local city rides, Obey One Way Taxi is highly specialized and optimized for long-distance intercity drop taxi routes across South India. We offer guaranteed flat-rate per-kilometer pricing (Sedan at ₹15/km, SUV at ₹20/km) with no hidden peak-hour surges, free doorstep pickup/drop, zero return charges, and professional highway drivers.',
+  },
+  {
     question: 'What is a drop taxi and why choose Obey One Way Taxi?',
     answer:
       'A drop taxi (or one-way cab) allows you to pay only for your single-direction trip without paying for the driver’s return journey. Obey One Way Taxi provides flat per-km pricing, doorstep pickup, and guaranteed clean cars across all major Tamil Nadu cities.',

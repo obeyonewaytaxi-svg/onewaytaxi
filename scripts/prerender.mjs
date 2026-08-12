@@ -155,6 +155,13 @@ async function main() {
     await withTimeout(browser.close(), 15000, 'browser close');
   } catch {}
   server.close();
+
+  const hostConfig = path.join(DIST, '..', 'vercel.json');
+  if (fs.existsSync(hostConfig)) {
+    fs.copyFileSync(hostConfig, path.join(DIST, 'vercel.json'));
+    console.log('copied vercel.json into dist for host config');
+  }
+
   console.log('prerender complete');
   process.exit(0);
 }
