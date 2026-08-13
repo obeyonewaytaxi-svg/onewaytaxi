@@ -1,11 +1,13 @@
+import { lazy, Suspense } from 'react';
 import { motion } from 'framer-motion';
 import { ShieldCheck, Zap, Tag, Phone } from 'lucide-react';
-import { BookingCard } from '../booking/BookingCard';
 import { siteConfig, waLink } from '../../config/site';
 import { cabs } from '../../data/siteData';
 import WhatsAppIcon from '../icons/WhatsAppIcon';
 import TaxiRoad from './TaxiRoad';
 import { CarImage } from './CarImage';
+
+const BookingCard = lazy(() => import('../booking/BookingCard').then((m) => ({ default: m.BookingCard })));
 
 const heroFeatures = [
   { icon: ShieldCheck, title: 'Verified fleet', desc: 'Clean, comfortable cars with modern interiors.' },
@@ -30,7 +32,7 @@ export function Hero() {
             
             <div className="inline-flex items-center gap-2 rounded-full bg-[#1a2d4a] border border-[#233859] px-4 py-1.5 text-[11px] font-bold uppercase tracking-widest text-[#F5C518]">
               <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-[#F5C518]" />
-              Trusted by 10,000+ travellers
+              Rated 4.9★ by 1,820+ travellers
             </div>
 
             <h1 className="mt-8 max-w-3xl font-heading text-4xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl lg:leading-[1.1]">
@@ -100,19 +102,15 @@ export function Hero() {
         >
           {/* Clean, professional container for the booking card */}
           <div className="rounded-2xl bg-white p-2 shadow-2xl">
-            <BookingCard />
-          </div>
-
-          {/* Real vehicle imagery — premium sedan from the fleet */}
-          <div className="mt-6 hidden overflow-hidden rounded-2xl border border-[#233859]/60 bg-[#1a2d4a]/40 lg:block">
-            <CarImage
-              src={cabs[0].image}
-              alt={`${cabs[0].title} — premium sedan available for one way taxi booking`}
-              className="h-36 w-full object-contain"
-              loading="eager"
-              width={480}
-              height={144}
-            />
+            <Suspense
+              fallback={
+                <div className="flex min-h-[540px] items-center justify-center">
+                  <div className="h-8 w-8 animate-spin rounded-full border-2 border-slate-200 border-t-brand-secondary" />
+                </div>
+              }
+            >
+              <BookingCard />
+            </Suspense>
           </div>
         </motion.div>
       </div>

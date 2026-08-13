@@ -18,7 +18,7 @@ const CityPage = () => {
   if (!city) {
     return (
       <>
-        <Seo title="City Not Found" path={`/cities/${slug ?? ''}`} noindex />
+        <Seo title="City Not Found" path="/" noindex />
         <section className="mx-auto flex min-h-[60vh] max-w-5xl flex-col items-center justify-center px-5 pb-24 text-center md:px-8">
           <p className="text-xs font-semibold uppercase tracking-widest text-brand-secondary-text">City unavailable</p>
           <h1 className="mt-6 text-3xl font-bold text-slate-900">No taxi service found for this city yet</h1>

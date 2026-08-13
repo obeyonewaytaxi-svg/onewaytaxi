@@ -276,7 +276,7 @@ export function BookingCard({ compact = false }: BookingCardProps) {
           Send Booking Request
         </Button>
         <p className="text-center text-[10px] leading-relaxed text-slate-500">
-          Note: Minimum billing of 130km (One Way) and 250km (Round Trip) applies. Tolls, permits, and parking are extra. Hill station driver beta ₹300 extra.
+          Note: Minimum billing of 130km (One Way) and 250km (Round Trip) applies. Tolls, permits, and parking are extra. Hill station driver bata ₹300 extra.
           <br className="hidden sm:block" />
           Opens WhatsApp with your booking details. Our team confirms within minutes.
         </p>

@@ -10,16 +10,9 @@ import ServiceHighlights from '../components/ServiceHighlights';
 
 const values = [
   { icon: ShieldCheck, title: 'Verified drivers', description: 'Professional drivers with verified profiles, background checks and on-time arrival.' },
-  { icon: MapPin, title: 'Fixed per-km pricing', description: 'Transparent fare structure with no hidden surcharges, tolls and parking included.' },
+  { icon: MapPin, title: 'Fixed per-km pricing', description: 'Transparent per-km fare structure with no hidden surcharges. Tolls and parking are charged at actuals and confirmed before booking.' },
   { icon: Star, title: 'Premium comfort', description: 'Modern cars with clean interiors, sanitized cabins and smooth highway journeys.' },
   { icon: Clock, title: '24/7 support', description: 'Always-on assistance for airport transfers and outstation bookings, every day of the year.' },
-];
-
-const milestones = [
-  { year: '2019', text: 'Obey One Way Taxi starts with a single sedan serving Chennai to Coimbatore.' },
-  { year: '2021', text: 'Fleet expands to 50+ vehicles covering 100+ routes across Tamil Nadu.' },
-  { year: '2023', text: '250+ routes live across South India with 24/7 airport transfer coverage.' },
-  { year: '2026', text: '5,000+ rides completed with a 4.9/5 average rating from verified travellers.' },
 ];
 
 const AboutPage = () => (
@@ -57,15 +50,29 @@ const AboutPage = () => (
       </div>
     </Section>
 
-    <Section eyebrow="Our journey" title="From one sedan to a South India network" className="bg-slate-50">
-      <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-        {milestones.map((milestone) => (
-          <Card key={milestone.year} className="relative overflow-hidden">
-            <div className="absolute left-0 top-0 h-full w-1 bg-brand-secondary" />
-            <p className="text-2xl font-bold text-brand-secondary-text">{milestone.year}</p>
-            <p className="mt-3 text-sm leading-relaxed text-slate-600">{milestone.text}</p>
-          </Card>
-        ))}
+    <Section eyebrow="Our coverage" title="South India, one route at a time">
+      <div className="grid gap-6 lg:grid-cols-3">
+        <Card className="relative overflow-hidden">
+          <div className="absolute left-0 top-0 h-full w-1 bg-brand-secondary" />
+          <p className="text-2xl font-bold text-brand-secondary-text">40+</p>
+          <p className="mt-3 text-sm leading-relaxed text-slate-600">
+            High-intent intercity routes between Chennai, Coimbatore, Madurai, Trichy, Salem, Erode, Vellore, Pondicherry, Bangalore and Ooty — each with transparent one-way fares.
+          </p>
+        </Card>
+        <Card className="relative overflow-hidden">
+          <div className="absolute left-0 top-0 h-full w-1 bg-brand-secondary" />
+          <p className="text-2xl font-bold text-brand-secondary-text">4.9★</p>
+          <p className="mt-3 text-sm leading-relaxed text-slate-600">
+            Average Google rating from 1,820+ verified reviews — earned trip by trip through clean cars, clear pricing and on-time pickups.
+          </p>
+        </Card>
+        <Card className="relative overflow-hidden">
+          <div className="absolute left-0 top-0 h-full w-1 bg-brand-secondary" />
+          <p className="text-2xl font-bold text-brand-secondary-text">24/7</p>
+          <p className="mt-3 text-sm leading-relaxed text-slate-600">
+            Airport transfers and outstation drops around the clock, with flight tracking and background-checked drivers on every journey.
+          </p>
+        </Card>
       </div>
     </Section>
 
@@ -105,7 +112,7 @@ const AboutPage = () => (
           <ul className="mt-6 space-y-3 text-sm text-slate-600">
             {[
               'Sanitized vehicles before every pickup',
-              'GPS tracking with live pickup updates',
+              'Driver and vehicle details shared before pickup',
               'Transparent fuel and toll billing',
               'Trained, courteous and verified chauffeurs',
             ].map((point) => (

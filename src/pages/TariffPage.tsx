@@ -21,14 +21,14 @@ const formatFare = (value: number | null) => (value === null ? '—' : `₹${val
 const inclusions = [
   'No return fare on one-way drops (pay only for one direction)',
   'Transparent per-km base rates for every cab',
-  'Professional, GPS-enabled verified drivers',
+  'Professional, background-checked drivers',
   'Air-conditioned (AC) ride with comfortable seating',
   'Doorstep pickup and drop-off',
 ];
 
 const exclusions = [
   'Tolls, state permits, and parking charges (payable at actuals)',
-  'Driver night beta allowance (₹400 extra, 11 PM – 6 AM)',
+  'Driver night bata allowance (₹400 extra, 11 PM – 6 AM)',
   'Hill-station/ghat road charges (₹300 extra)',
   'GST (5% extra if official invoice is required)',
 ];

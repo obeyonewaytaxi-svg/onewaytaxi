@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 import { Seo } from '../lib/seo';
-import { localBusinessSchema, webSiteSchema, organizationSchema, faqSchema } from '../lib/schema';
+import { localBusinessSchema, webSiteSchema, organizationSchema } from '../lib/schema';
 import { Hero } from '../components/shared/Hero';
 import { StatsBar } from '../components/shared/StatsBar';
 import { RouteGrid } from '../components/shared/RouteGrid';
@@ -12,6 +12,8 @@ import CoverageMapSection from '../components/CoverageMapSection';
 import PricingSection from '../components/PricingSection';
 import { popularRoutes, reviews, faqs } from '../data/siteData';
 import PopularCities from '../components/PopularCities';
+
+const homeFaqs = faqs.slice(0, 5);
 
 const HomePage = () => (
   <>
@@ -36,8 +38,7 @@ const HomePage = () => (
       jsonLd={[
         localBusinessSchema(),
         webSiteSchema(),
-        organizationSchema(),
-        faqSchema(faqs)
+        organizationSchema()
       ]}
     />
     <Hero />
@@ -96,7 +97,15 @@ const HomePage = () => (
             Clear answers for bookings, payments and ride expectations.
           </p>
         </div>
-        <Accordion items={faqs} className="mt-8" />
+        <Accordion items={homeFaqs} className="mt-8" />
+        <div className="mt-6 flex justify-center">
+          <Link
+            to="/faq"
+            className="inline-flex items-center gap-2 rounded-xl border-2 border-slate-200 bg-white px-5 py-3 text-sm font-bold uppercase tracking-wider text-slate-700 transition-all hover:border-brand-secondary hover:text-brand-secondary-text hover:shadow-md"
+          >
+            View all FAQs <ArrowRight className="h-4 w-4" />
+          </Link>
+        </div>
       </div>
     </section>
 

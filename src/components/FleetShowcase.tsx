@@ -30,6 +30,9 @@ const FleetShowcase = () => (
               alt={car.title}
               className="h-40 w-full object-contain transition-transform duration-300 group-hover:scale-105"
               loading="lazy"
+              width={320}
+              height={160}
+              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
             />
           </div>
           <div className="p-5">

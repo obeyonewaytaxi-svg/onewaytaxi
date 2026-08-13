@@ -88,17 +88,18 @@ export function routeSchema(route: Route) {
 }
 
 export function reviewSchema(reviews: Review[]) {
+  const review = reviews[0];
   return {
     '@context': 'https://schema.org',
     '@type': 'Review',
     itemReviewed: { '@id': `${siteConfig.domain}/#localbusiness` },
     reviewRating: {
       '@type': 'Rating',
-      ratingValue: '4.9',
+      ratingValue: String(review?.rating ?? 5),
       bestRating: '5',
     },
-    author: { '@type': 'Person', name: siteConfig.name },
-    reviewBody: reviews[0]?.quote ?? '',
+    author: { '@type': 'Person', name: review?.name ?? 'Verified Traveller' },
+    reviewBody: review?.quote ?? '',
   };
 }
 

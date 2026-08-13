@@ -134,7 +134,7 @@ const RouteDetails = () => {
                 {[
                   `Luxury vehicles with door-to-door pickup between ${origin} and ${destination}`,
                   'Transparent pricing with instant fare estimate and no surprises',
-                  'Verified drivers, airport support, and live route tracking',
+                  'Verified drivers, airport support, and flight tracking',
                 ].map((bullet) => (
                   <div key={bullet} className="flex gap-3 rounded-xl border border-slate-50 bg-slate-50 p-4">
                     <Star className="mt-0.5 h-4 w-4 shrink-0 text-brand-secondary" />

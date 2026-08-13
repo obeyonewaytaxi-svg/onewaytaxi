@@ -23,7 +23,12 @@ const CoverageMapSection = () => (
       <div className="relative overflow-hidden rounded-3xl border border-slate-100 bg-white shadow-sm">
         <img
           src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=1200&q=80"
+          srcSet="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=640&q=80 640w, https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=1200&q=80 1200w"
+          sizes="(max-width: 1024px) 100vw, 50vw"
           alt="South India map coverage"
+          loading="lazy"
+          width={1200}
+          height={576}
           className="h-72 w-full object-cover sm:h-80 lg:h-full"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-slate-900/70 via-transparent to-slate-900/30" />

@@ -112,7 +112,7 @@ const PricingSection = () => {
           </p>
           <p className="mt-4 inline-flex items-center gap-2 rounded-full border border-yellow-200 bg-white px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-slate-700">
             <span className="h-1.5 w-1.5 rounded-full bg-yellow-500" />
-            Trusted by 10,000+ travellers
+            Rated 4.9★ by 1,820+ travellers
           </p>
         </div>
 
@@ -139,6 +139,7 @@ const PricingSection = () => {
                   className="h-48 w-full object-contain transition duration-300 group-hover:scale-105"
                   width={300}
                   height={192}
+                  sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 25vw"
                 />
               </div>
 

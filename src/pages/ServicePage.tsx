@@ -17,7 +17,7 @@ const ServicePage = () => {
   if (!service) {
     return (
       <>
-        <Seo title="Service Not Found" path={`/services/${slug ?? ''}`} noindex />
+        <Seo title="Service Not Found" path="/" noindex />
         <section className="mx-auto flex min-h-[70vh] max-w-5xl flex-col items-center justify-center px-5 pb-24 text-center md:px-8">
           <p className="text-xs font-semibold uppercase tracking-widest text-brand-secondary-text">Service unavailable</p>
           <h1 className="mt-6 text-3xl font-bold text-slate-900">This service is not available yet</h1>

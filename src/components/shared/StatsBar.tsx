@@ -1,19 +1,19 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useEffect, useRef, useState } from 'react';
-import { Headphones, ThumbsUp, Route, Car } from 'lucide-react';
+import { Headphones, Star, Route, ThumbsUp } from 'lucide-react';
 
 const stats = [
   { value: 24, suffix: '/7', label: 'Support', icon: Headphones },
-  { value: 98, suffix: '%', label: 'Customer satisfaction', icon: ThumbsUp },
-  { value: 100, suffix: '+', label: 'Routes covered', icon: Route },
-  { value: 5000, suffix: '+', label: 'Successful rides', icon: Car },
+  { value: 4.9, suffix: '★', label: 'Google rating', icon: Star },
+  { value: 40, suffix: '+', label: 'Routes covered', icon: Route },
+  { value: 1820, suffix: '+', label: 'Verified reviews', icon: ThumbsUp },
 ];
 
 function Counter({ target, suffix }: { target: number; suffix: string }) {
   const ref = useRef<HTMLSpanElement | null>(null);
   const inView = useInView(ref, { once: true });
-  const [value, setValue] = useState(0);
+  const [value, setValue] = useState('0');
 
   useEffect(() => {
     if (!inView) return;
@@ -23,7 +23,11 @@ function Counter({ target, suffix }: { target: number; suffix: string }) {
 
     const tick = (now: number) => {
       const progress = Math.min((now - start) / duration, 1);
-      setValue(Math.round(target * (1 - Math.pow(1 - progress, 3))));
+      const current = target * (1 - Math.pow(1 - progress, 3));
+      const display = Number.isInteger(target)
+        ? Math.round(current).toLocaleString('en-IN')
+        : current.toFixed(1);
+      setValue(display);
       if (progress < 1) frame = requestAnimationFrame(tick);
     };
     frame = requestAnimationFrame(tick);

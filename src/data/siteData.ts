@@ -12,7 +12,7 @@ export const cabs: Cab[] = [
     luggage: '2 bags',
     model: 'Swift Dzire, Xcent or similar',
     description: 'Compact comfort for personal and family travel at the best per-km value.',
-    details: ['Compact comfort', 'Ideal for 2-3 passengers', 'Budget-friendly', 'AC & Music System', 'Driver charge: ₹400/day'],
+    details: ['Compact comfort', 'Ideal for 2-3 passengers', 'Budget-friendly', 'AC & Music System'],
   },
   {
     title: 'SUV',
@@ -24,7 +24,7 @@ export const cabs: Cab[] = [
     luggage: '3 bags',
     model: 'Xylo, Tavera, Lodgy or similar',
     description: 'Spacious SUV for larger groups and extra luggage on long highway routes.',
-    details: ['More luggage room', 'Comfort for 4-6 passengers', 'Premium interiors', 'Driver charge: ₹400/day'],
+    details: ['More luggage room', 'Comfort for 4-6 passengers', 'Premium interiors'],
   },
   {
     title: 'INNOVA',
@@ -36,7 +36,7 @@ export const cabs: Cab[] = [
     luggage: '3 bags',
     model: 'Toyota Innova',
     description: 'Premium MPV built for families, business travel and airport transfers.',
-    details: ['Ample legroom', 'Business friendly', 'Reliable long-distance ride', 'Driver charge: ₹400/day'],
+    details: ['Ample legroom', 'Business friendly', 'Reliable long-distance ride'],
   },
   {
     title: 'CRYSTA',
@@ -48,7 +48,7 @@ export const cabs: Cab[] = [
     luggage: '4 bags',
     model: 'Innova Crysta',
     description: 'Luxury MPV with executive seating and the most premium ride experience.',
-    details: ['Executive travel', 'Extra comfort', 'Premium service experience', 'Driver charge: ₹400/day'],
+    details: ['Executive travel', 'Extra comfort', 'Premium service experience'],
   },
 ];
 
@@ -146,7 +146,7 @@ export const services: Service[] = [
       'No return fare — pay only for your journey',
       'Transparent per-km pricing with instant quotes',
       'Doorstep pickup and drop at any location',
-      'Verified drivers with live route tracking',
+      'Verified, background-checked drivers',
     ],
   },
   {
@@ -227,7 +227,7 @@ export const faqs: FaqItem[] = [
   {
     question: 'Is the driver verified?',
     answer:
-      'Every driver is verified and GPS-enabled for your safety, with regular background checks and customer support available 24×7.',
+      'Every driver is verified and background-checked for your safety, with customer support available 24×7.',
   },
   {
     question: 'What payment methods do you accept?',
@@ -240,14 +240,9 @@ export const faqs: FaqItem[] = [
       'Yes, we operate 24×7 including public holidays. Airport pickups and night drives are handled by dedicated night-shift drivers.',
   },
   {
-    question: 'How does Obey One Way Taxi compare with other drop taxi services like Red Taxi?',
+    question: 'How does Obey One Way Taxi compare with Red Taxi for intercity drops?',
     answer:
-      'Obey One Way Taxi specializes in intercity drop taxi and outstation rides across Tamil Nadu and South India with transparent per-km rates (Sedan ₹15/km, SUV ₹20/km), zero return fare, verified chauffeurs, and 24/7 instant WhatsApp booking.',
-  },
-  {
-    question: 'Why choose Obey One Way Taxi instead of Red Taxi for outstation drop cabs?',
-    answer:
-      'While Red Taxi is excellent for local city rides, Obey One Way Taxi is highly specialized and optimized for long-distance intercity drop taxi routes across South India. We offer guaranteed flat-rate per-kilometer pricing (Sedan at ₹15/km, SUV at ₹20/km) with no hidden peak-hour surges, free doorstep pickup/drop, zero return charges, and professional highway drivers.',
+      'Obey One Way Taxi specializes in long-distance intercity drop taxi and outstation rides across Tamil Nadu and South India. We offer flat per-km pricing (Sedan ₹15/km, SUV ₹20/km), zero return fare, background-checked highway drivers, and 24/7 instant WhatsApp booking — ideal when you need a one-way drop rather than a local city ride.',
   },
   {
     question: 'What is a drop taxi and why choose Obey One Way Taxi?',

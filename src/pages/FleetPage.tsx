@@ -29,7 +29,7 @@ const FleetPage = () => (
       <div className="mb-6 flex justify-center">
         <span className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-1.5 text-[11px] font-bold uppercase tracking-wider text-slate-600">
           <span className="h-1.5 w-1.5 rounded-full bg-brand-secondary" />
-          Trusted by 10,000+ travellers
+          Rated 4.9★ by 1,820+ travellers
         </span>
       </div>
       <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
@@ -47,6 +47,7 @@ const FleetPage = () => (
                 loading="lazy"
                 width={320}
                 height={160}
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
               />
               <span className="absolute left-4 top-4 rounded-lg bg-brand-secondary px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-slate-900">
                 ₹{cab.rate}/km

@@ -191,7 +191,7 @@ Estimated Total: ${formatINR(result.estimatedTotal)}`;
 
               {result.hillCharge > 0 && (
                 <div className="flex justify-between text-amber-700">
-                  <span>Hill Station Driver Beta:</span>
+                  <span>Hill Station Driver Bata:</span>
                   <span className="font-numbers font-semibold">{formatINR(result.hillCharge)}</span>
                 </div>
               )}
