@@ -106,7 +106,7 @@ const SitemapPage = () => (
           <ul className="mt-4 space-y-2.5">
             {services.map((service) => (
               <li key={service.slug}>
-                <Link to={`/services/${service.slug}`} className="text-sm text-brand-muted transition hover:text-brand-secondary-text">
+                <Link to={`/${service.slug}`} className="text-sm text-brand-muted transition hover:text-brand-secondary-text">
                   {service.title}
                 </Link>
               </li>

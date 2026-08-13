@@ -72,6 +72,10 @@ function App() {
               <Routes>
               <Route path="/" element={<HomePage />} />
               <Route path="/services/:slug" element={<ServicePage />} />
+              <Route path="/one-way-taxi" element={<ServicePage />} />
+              <Route path="/round-trip" element={<ServicePage />} />
+              <Route path="/airport-transfer" element={<ServicePage />} />
+              <Route path="/outstation" element={<ServicePage />} />
               <Route path="/fleet" element={<FleetPage />} />
               <Route path="/tariff" element={<TariffPage />} />
               <Route path="/fare-calculator" element={<FareCalculatorPage />} />

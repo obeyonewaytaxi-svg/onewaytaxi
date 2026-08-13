@@ -25,6 +25,7 @@ export type Route = {
 export type Service = {
   title: string;
   slug: string;
+  seoTitle?: string;
   description: string;
   metaDescription?: string;
   longDescription: string;

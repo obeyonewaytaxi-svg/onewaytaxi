@@ -136,14 +136,15 @@ export const services: Service[] = [
   {
     title: 'One Way Taxi',
     slug: 'one-way-taxi',
+    seoTitle: 'One Way Drop Taxi',
     icon: 'MapPin',
     description: 'Smooth one-way taxi service for affordable intercity journeys — pay only for one direction.',
     metaDescription:
-      'Book an affordable one-way taxi across Tamil Nadu & South India. Pay only for the distance you travel with transparent per-km rates and zero return fare.',
+      'Book an affordable one-way drop taxi across Tamil Nadu & South India. Pay only for the distance you travel with transparent per-km rates and zero return fare.',
     longDescription:
-      'Book a one-way taxi and pay only for the distance you travel. Our one-way drop service removes the traditional return-fare burden, making intercity travel across Tamil Nadu and South India genuinely affordable.',
+      'Book a one-way drop taxi and pay only for the drop direction of your journey. Our one-way taxi service removes the traditional return-fare burden, making intercity travel across Tamil Nadu and South India genuinely affordable.',
     features: [
-      'No return fare — pay only for your journey',
+      'No return fare — pay only for your drop',
       'Transparent per-km pricing with instant quotes',
       'Doorstep pickup and drop at any location',
       'Verified, background-checked drivers',

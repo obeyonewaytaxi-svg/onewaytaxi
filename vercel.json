@@ -1,4 +1,8 @@
 {
+  "redirects": [
+    { "source": "/services/:slug", "destination": "/:slug", "permanent": true },
+    { "source": "/services", "destination": "/one-way-taxi", "permanent": true }
+  ],
   "headers": [
     {
       "source": "/(.*)",

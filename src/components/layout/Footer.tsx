@@ -76,7 +76,7 @@ const Footer = () => (
           <ul className="mt-4 space-y-2.5 text-sm text-slate-500">
             {services.map((service) => (
               <li key={service.slug}>
-                <Link to={`/services/${service.slug}`} className="transition hover:text-white">{service.title}</Link>
+                <Link to={`/${service.slug}`} className="transition hover:text-white">{service.title}</Link>
               </li>
             ))}
           </ul>

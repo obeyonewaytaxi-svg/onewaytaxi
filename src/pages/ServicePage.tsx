@@ -1,4 +1,4 @@
-import { Link, useParams } from 'react-router-dom';
+import { Link, useLocation, useParams } from 'react-router-dom';
 import { ArrowRight, CheckCircle2, MapPin, Sparkles } from 'lucide-react';
 import { Seo } from '../lib/seo';
 import { serviceSchema, breadcrumbSchema } from '../lib/schema';
@@ -11,7 +11,9 @@ import { services, findServiceBySlug, popularRoutes } from '../data/siteData';
 import { RouteGrid } from '../components/shared/RouteGrid';
 
 const ServicePage = () => {
-  const { slug } = useParams<{ slug: string }>();
+  const { slug: paramSlug } = useParams<{ slug: string }>();
+  const { pathname } = useLocation();
+  const slug = paramSlug ?? pathname.split('/').filter(Boolean).pop();
   const service = slug ? findServiceBySlug(slug) : null;
 
   if (!service) {
@@ -37,17 +39,18 @@ const ServicePage = () => {
   }
 
   const relatedServices = services.filter((item) => item.slug !== service.slug).slice(0, 3);
+  const displayTitle = service.seoTitle ?? service.title;
 
   return (
     <>
       <Seo
-        title={`${service.title} Booking`}
+        title={`${displayTitle} Booking`}
         description={service.metaDescription ?? service.description}
-        path={`/services/${service.slug}`}
+        path={`/${service.slug}`}
         keywords={[
           service.description.toLowerCase().includes('airport')
             ? 'airport drop taxi booking'
-            : 'one way taxi booking',
+            : 'one way drop taxi booking',
           'drop taxi',
           'one way taxi',
           'one way drop cab',
@@ -58,16 +61,16 @@ const ServicePage = () => {
           serviceSchema(service),
           breadcrumbSchema([
             { name: 'Home', path: '/' },
-            { name: service.title, path: `/services/${service.slug}` },
+            { name: displayTitle, path: `/${service.slug}` },
           ]),
         ]}
       />
 
       <PageHeader
-        eyebrow={service.title}
-        title={`Premium ${service.title} bookings`}
+        eyebrow={displayTitle}
+        title={`Premium ${displayTitle} bookings`}
         description={service.longDescription}
-        breadcrumbs={[{ name: service.title, path: '#' }]}
+        breadcrumbs={[{ name: displayTitle, path: '#' }]}
       />
 
       <Container className="py-12">
@@ -90,7 +93,7 @@ const ServicePage = () => {
 
             <Card>
               <p className="text-xs font-semibold uppercase tracking-widest text-brand-secondary-text">How it works</p>
-              <h2 className="mt-3 font-heading text-lg font-bold text-slate-900">Book your {service.title.toLowerCase()} in minutes</h2>
+              <h2 className="mt-3 font-heading text-lg font-bold text-slate-900">Book your {displayTitle.toLowerCase()} in minutes</h2>
               <div className="mt-4 grid gap-3 sm:grid-cols-3">
                 {['Enter pickup & drop', 'Choose your cab', 'Confirm on WhatsApp'].map((step, index) => (
                   <div key={step} className="rounded-xl border border-slate-100 bg-slate-50 p-4">
@@ -107,7 +110,7 @@ const ServicePage = () => {
           <div className="space-y-6">
             <BookingCard compact />
             <div className="rounded-2xl border border-brand-secondary/20 bg-brand-secondary/5 p-5">
-              <p className="text-[10px] font-semibold uppercase tracking-wider text-brand-secondary-text">Why choose {service.title}?</p>
+              <p className="text-[10px] font-semibold uppercase tracking-wider text-brand-secondary-text">Why choose {displayTitle}?</p>
               <p className="mt-2 text-sm leading-relaxed text-brand-muted">
                 {service.longDescription} Our team ensures each booking is handled with care so you travel in comfort and style.
               </p>
@@ -140,7 +143,7 @@ const ServicePage = () => {
           {relatedServices.map((item) => (
             <Link
               key={item.slug}
-              to={`/services/${item.slug}`}
+              to={`/${item.slug}`}
               className="group rounded-2xl border border-slate-100 bg-white p-5 shadow-card transition-all hover:-translate-y-0.5 hover:border-brand-secondary/30 hover:shadow-card-hover"
             >
               <h3 className="text-base font-bold text-slate-900 group-hover:text-brand-secondary-text">{item.title}</h3>
@@ -154,7 +157,7 @@ const ServicePage = () => {
       </section>
 
       <CtaBanner
-        title={`Book your ${service.title.toLowerCase()} today`}
+        title={`Book your ${displayTitle.toLowerCase()} today`}
         description="Get a transparent fare quote and instant confirmation. Our dispatch team is available round the clock."
       />
     </>

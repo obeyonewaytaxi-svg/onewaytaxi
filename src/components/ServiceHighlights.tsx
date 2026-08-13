@@ -27,7 +27,7 @@ const ServiceHighlights = () => (
         return (
           <Link
             key={service.slug}
-            to={`/services/${service.slug}`}
+            to={`/${service.slug}`}
             className="group overflow-hidden rounded-2xl border border-slate-100 bg-white p-5 shadow-card transition-all duration-200 hover:-translate-y-0.5 hover:border-brand-secondary/30 hover:shadow-card-hover"
           >
             <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-brand-secondary/10 transition group-hover:bg-brand-secondary/20">

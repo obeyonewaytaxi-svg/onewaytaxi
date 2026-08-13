@@ -117,7 +117,7 @@ const Header = () => {
                 {services.map((service) => (
                   <Link
                     key={service.slug}
-                    to={`/services/${service.slug}`}
+                    to={`/${service.slug}`}
                     className="block rounded-xl px-4 py-2.5 text-[13px] font-medium text-slate-600 transition-colors duration-150 hover:bg-brand-secondary/10 hover:text-slate-900"
                   >
                     {service.title}
@@ -189,7 +189,7 @@ const Header = () => {
                 {services.map((service) => (
                   <NavLink
                     key={service.slug}
-                    to={`/services/${service.slug}`}
+                    to={`/${service.slug}`}
                     className={({ isActive }) =>
                       cn('rounded-xl px-4 py-2.5 text-sm font-medium', isActive ? 'text-brand-secondary-text' : 'text-slate-600')
                     }
