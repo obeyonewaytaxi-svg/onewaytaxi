@@ -6,9 +6,9 @@ import Header from './components/layout/Header';
 import Footer from './components/layout/Footer';
 import FloatingActions from './components/layout/FloatingActions';
 import { ErrorBoundary } from './components/ErrorBoundary';
+import HomePage from './pages/HomePage';
 import NotFoundPage from './pages/NotFoundPage';
 
-const HomePage = lazy(() => import('./pages/HomePage'));
 const TariffPage = lazy(() => import('./pages/TariffPage'));
 const ServicePage = lazy(() => import('./pages/ServicePage'));
 const FleetPage = lazy(() => import('./pages/FleetPage'));
@@ -31,7 +31,7 @@ const SitemapPage = lazy(() => import('./pages/SitemapPage'));
 
 function Loading() {
   return (
-    <div className="flex min-h-[60vh] items-center justify-center">
+    <div className="flex min-h-screen items-center justify-center">
       <div className="h-8 w-8 animate-spin rounded-full border-2 border-slate-200 border-t-brand-secondary" />
     </div>
   );

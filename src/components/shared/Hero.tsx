@@ -1,4 +1,3 @@
-import { lazy, Suspense } from 'react';
 import { motion } from 'framer-motion';
 import { ShieldCheck, Zap, Tag, Phone } from 'lucide-react';
 import { siteConfig, waLink } from '../../config/site';
@@ -6,8 +5,7 @@ import { cabs } from '../../data/siteData';
 import WhatsAppIcon from '../icons/WhatsAppIcon';
 import TaxiRoad from './TaxiRoad';
 import { CarImage } from './CarImage';
-
-const BookingCard = lazy(() => import('../booking/BookingCard').then((m) => ({ default: m.BookingCard })));
+import { BookingCard } from '../booking/BookingCard';
 
 const heroFeatures = [
   { icon: ShieldCheck, title: 'Verified fleet', desc: 'Clean, comfortable cars with modern interiors.' },
@@ -96,22 +94,14 @@ export function Hero() {
 
         {/* RIGHT CONTENT (Booking Card) */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.96 }}
-          animate={{ opacity: 1, scale: 1 }}
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.85, ease: 'easeOut' }}
           className="relative w-full max-w-xl md:w-1/2"
         >
           {/* Clean, professional container for the booking card */}
           <div className="rounded-2xl bg-white p-2 shadow-2xl">
-            <Suspense
-              fallback={
-                <div className="flex min-h-[540px] items-center justify-center">
-                  <div className="h-8 w-8 animate-spin rounded-full border-2 border-slate-200 border-t-brand-secondary" />
-                </div>
-              }
-            >
-              <BookingCard />
-            </Suspense>
+            <BookingCard />
           </div>
         </motion.div>
       </div>
