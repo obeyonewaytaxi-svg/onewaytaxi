@@ -109,10 +109,13 @@ export function carSchema(cab: Cab) {
     '@type': 'Product',
     name: `${cab.title} Taxi | ${siteConfig.name}`,
     description: cab.description,
+    image: cab.image,
     offers: {
       '@type': 'Offer',
       priceCurrency: 'INR',
       price: cab.rate,
+      availability: 'https://schema.org/InStock',
+      priceValidUntil: `${new Date().getFullYear()}-12-31`,
       url: `${siteConfig.domain}/fleet`,
     },
     brand: { '@type': 'Brand', name: cab.model },
