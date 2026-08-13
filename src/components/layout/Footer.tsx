@@ -133,21 +133,15 @@ const Footer = () => (
         </div>
       </div>
 
-      <div className="mt-8 flex flex-col gap-3 border-t border-white/10 pt-6 text-xs text-slate-500 sm:flex-row sm:items-center sm:justify-between">
-        <div className="flex flex-col gap-2">
+      <div className="mt-8 flex flex-col gap-4 border-t border-white/10 pt-6 text-xs text-slate-500 sm:flex-row sm:items-center sm:justify-between">
+        <div>
           <p>© 2026 {siteConfig.name}. All rights reserved.</p>
-          <div className="flex items-center gap-1.5 font-medium">
-            <span>Powered by Sathish</span>
-            <span className="text-slate-600">-</span>
-            <a href="https://wa.me/919962952097" target="_blank" rel="noreferrer" className="flex items-center gap-1 text-[#25D366] hover:text-white transition-colors">
-              <WhatsAppIcon className="h-3.5 w-3.5" />
-              +91 9962952097
-            </a>
-          </div>
         </div>
-        <nav className="flex flex-wrap gap-x-4 gap-y-1.5" aria-label="Legal">
+        <nav className="flex flex-wrap gap-x-6 gap-y-3" aria-label="Legal">
           {legalLinks.map((link) => (
-            <Link key={link.to} to={link.to} className="transition hover:text-white">{link.label}</Link>
+            <Link key={link.to} to={link.to} className="inline-flex min-h-[44px] items-center py-2 text-slate-400 transition hover:text-white">
+              {link.label}
+            </Link>
           ))}
         </nav>
       </div>

@@ -210,9 +210,14 @@ export const faqs: FaqItem[] = [
       'Choose your pickup and drop locations, select a cab type, set your date and time, then send the booking request via WhatsApp for instant confirmation.',
   },
   {
-    question: 'Are tolls and parking charges included?',
+    question: 'Are tolls, state permits, and parking charges included?',
     answer:
-      'Tolls and parking are included in the final fare for most routes, and we provide a transparent estimate before you confirm your booking.',
+      'No, tolls, state permits, and parking charges are excluded from the per-km base rate and are payable at actuals during the journey. However, we provide a transparent estimate of these costs before your trip is confirmed on WhatsApp.',
+  },
+  {
+    question: 'Are there any extra charges like driver allowances or night charges?',
+    answer:
+      'A driver allowance (bata) of ₹400 is already factored in as the base fare. An additional driver night allowance of ₹400 applies if the journey occurs between 11:00 PM and 6:00 AM. For hill station trips, a ₹300 driver allowance applies. GST (5%) is extra if an official invoice is required.',
   },
   {
     question: 'Can I change my booking after confirmation?',

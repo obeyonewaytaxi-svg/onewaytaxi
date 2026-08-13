@@ -30,7 +30,7 @@ export function Hero() {
             
             <div className="inline-flex items-center gap-2 rounded-full bg-[#1a2d4a] border border-[#233859] px-4 py-1.5 text-[11px] font-bold uppercase tracking-widest text-[#F5C518]">
               <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-[#F5C518]" />
-              Trusted by 50,000+ travellers
+              Trusted by 10,000+ travellers
             </div>
 
             <h1 className="mt-8 max-w-3xl font-heading text-4xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl lg:leading-[1.1]">
@@ -81,7 +81,7 @@ export function Hero() {
                     <Icon className="h-5 w-5 text-[#F5C518]" />
                   </div>
                   <div>
-                    <h3 className="text-sm font-bold text-white tracking-wide">{title}</h3>
+                    <p className="text-sm font-bold text-white tracking-wide">{title}</p>
                     <p className="mt-1.5 text-xs leading-relaxed text-slate-400">{desc}</p>
                   </div>
                 </motion.div>

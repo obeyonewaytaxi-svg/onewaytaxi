@@ -19,18 +19,18 @@ const fareFor = (origin: string, destination: string, cabTitle: string, tripType
 const formatFare = (value: number | null) => (value === null ? '—' : `₹${value.toLocaleString('en-IN')}`);
 
 const inclusions = [
-  'Tolls and parking included on most routes',
-  'No return fare on one-way drops',
-  'Transparent per-km rates for every cab',
-  'Verified, GPS-enabled drivers',
-  'AC ride with comfortable seating',
+  'No return fare on one-way drops (pay only for one direction)',
+  'Transparent per-km base rates for every cab',
+  'Professional, GPS-enabled verified drivers',
+  'Air-conditioned (AC) ride with comfortable seating',
+  'Doorstep pickup and drop-off',
 ];
 
 const exclusions = [
-  'Driver night allowance (11 PM – 6 AM)',
-  'Hill-station charges on select ghat routes',
-  'Extra charges beyond the agreed halt time',
-  'Waiting charges beyond free time at pickup',
+  'Tolls, state permits, and parking charges (payable at actuals)',
+  'Driver night beta allowance (₹400 extra, 11 PM – 6 AM)',
+  'Hill-station/ghat road charges (₹300 extra)',
+  'GST (5% extra if official invoice is required)',
 ];
 
 import PricingSection from '../components/PricingSection';

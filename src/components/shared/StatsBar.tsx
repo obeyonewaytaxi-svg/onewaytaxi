@@ -6,7 +6,7 @@ import { Headphones, ThumbsUp, Route, Car } from 'lucide-react';
 const stats = [
   { value: 24, suffix: '/7', label: 'Support', icon: Headphones },
   { value: 98, suffix: '%', label: 'Customer satisfaction', icon: ThumbsUp },
-  { value: 250, suffix: '+', label: 'Routes covered', icon: Route },
+  { value: 100, suffix: '+', label: 'Routes covered', icon: Route },
   { value: 5000, suffix: '+', label: 'Successful rides', icon: Car },
 ];
 

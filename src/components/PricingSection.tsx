@@ -112,7 +112,7 @@ const PricingSection = () => {
           </p>
           <p className="mt-4 inline-flex items-center gap-2 rounded-full border border-yellow-200 bg-white px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-slate-700">
             <span className="h-1.5 w-1.5 rounded-full bg-yellow-500" />
-            Trusted by 50,000+ travellers
+            Trusted by 10,000+ travellers
           </p>
         </div>
 

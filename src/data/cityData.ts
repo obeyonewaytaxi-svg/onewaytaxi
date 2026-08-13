@@ -34,8 +34,7 @@ export const cityContent: Record<string, CityContent> = {
     landmarks: ['Chennai Airport', 'Chennai Central', 'Egmore Station', 'Marina Beach', 'IT Corridor OMR'],
     airport: 'Chennai International Airport (MAA)',
     faqs: [
-      { q: 'How much is a Chennai drop taxi?', a: 'Fares are transparent per-km based on cab type and destination. Check the route page for an instant estimate — you pay only for the one-way drop, with no return fare.' },
-      { q: 'Does the Chennai taxi include tolls?', a: 'Tolls and parking are included in the final fare for most routes, and we confirm a transparent estimate before you book.' },
+      { q: 'Are tolls and parking charges included for Chennai drop taxis?', a: 'No, tolls and parking charges are excluded from the per-km rate and are payable at actuals. We will provide an estimate of these charges before confirming your booking on WhatsApp.' },
       { q: 'Do you pick up from Chennai Airport?', a: 'Yes. We offer airport pickup and drop taxi service from Chennai International Airport with flight tracking on request.' },
     ],
   },
@@ -96,7 +95,7 @@ export const cityContent: Record<string, CityContent> = {
     faqs: [
       { q: 'What routes do Trichy drop taxis cover?', a: 'We cover Chennai, Madurai, Salem, Coimbatore and Pondicherry with one way and round trip options.' },
       { q: 'Is a Trichy to Chennai taxi available at night?', a: 'Yes. We operate 24/7 including nights and public holidays across Tamil Nadu.' },
-      { q: 'Are tolls included in Trichy cab fares?', a: 'Tolls and parking are included in the final fare for most routes, confirmed before booking.' },
+      { q: 'Are tolls and parking charges included in Trichy cab fares?', a: 'No, tolls and parking charges are excluded from the base per-km rate and are payable at actuals. Our dispatch team will share an estimate of these fees during booking confirmation.' },
     ],
   },
   salem: {
