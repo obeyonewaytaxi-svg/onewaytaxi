@@ -29,10 +29,6 @@ const withTimeout = (promise, ms, label) =>
   ]);
 
 async function main() {
-  if (process.env.VERCEL === '1') {
-    console.log('Vercel build environment detected: skipping Puppeteer static page prerendering to prevent serverless Chromium dependency errors.');
-    return;
-  }
   let bundledChrome = null;
   try {
     bundledChrome = await puppeteer.executablePath();
