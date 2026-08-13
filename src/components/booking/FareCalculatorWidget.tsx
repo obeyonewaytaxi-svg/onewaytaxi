@@ -7,6 +7,7 @@ import { cabs, routes } from '../../data/siteData';
 import { Select, FieldLabel, Input } from '../ui/Input';
 import { siteConfig, waLink } from '../../config/site';
 import WhatsAppIcon from '../icons/WhatsAppIcon';
+import { trackEvent } from '../../lib/analytics';
 
 const cityOptions = Array.from(new Set(routes.flatMap((route) => [route.origin, route.destination]))).sort();
 
@@ -60,6 +61,16 @@ Trip Type: ${tripType}
 Estimated Distance: ${result.distanceKm} km
 Estimated Total: ${formatINR(result.estimatedTotal)}`;
     window.open(waLink(text), '_blank');
+    trackEvent('fare_calculate', {
+      flow: 'fare_calculator',
+      pickup,
+      drop,
+      vehicle: cabTitle,
+      trip_type: tripType,
+      distance_km: result.distanceKm,
+      estimated_total: result.estimatedTotal,
+      path: window.location.pathname,
+    });
   };
 
   return (

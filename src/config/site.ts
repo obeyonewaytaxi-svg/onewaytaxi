@@ -20,8 +20,8 @@ export const siteConfig = {
   keywords:
     'drop taxi, one way taxi, one way drop cab, outstation cab service, drop taxi near me, one way car rental, cheap one way cab, no return fare taxi, 24/7 outstation taxi, airport drop taxi booking, transparent fare outstation cab, Chennai drop taxi, Coimbatore drop taxi, Madurai to Chennai one way cab, Trichy drop taxi service, drop taxi from Bangalore, red taxi drop taxi, red taxi outstation alternative, obey taxi vs red taxi, cheap outstation drop taxi Tamil Nadu',
   analytics: {
-    ga4Id: '', // Google Analytics 4 Measurement ID (e.g. G-XXXXXXXXXX)
-    clarityId: '', // Microsoft Clarity Project ID (e.g. xxxxxxxx)
+    ga4Id: 'G-X6ZJXK09T1', // Google Analytics 4 Measurement ID (e.g. G-XXXXXXXXXX)
+    clarityId: 'y1nadvf2c3', // Microsoft Clarity Project ID (e.g. xxxxxxxx)
   },
 } as const;
 

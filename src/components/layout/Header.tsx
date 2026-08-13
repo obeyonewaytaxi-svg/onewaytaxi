@@ -134,6 +134,7 @@ const Header = () => {
               href={waLink('Hello Obey One Way Taxi, I would like to book a taxi.')}
               target="_blank"
               rel="noreferrer"
+              data-flow="header"
               className="flex h-9 w-9 items-center justify-center rounded-full text-[#25D366] transition-colors duration-150 hover:bg-[#25D366]/10"
               title="Chat on WhatsApp"
               aria-label="Chat on WhatsApp"
@@ -227,6 +228,7 @@ const Header = () => {
                 href={waLink('Hello Obey One Way Taxi, I would like to book a taxi.')}
                 target="_blank"
                 rel="noreferrer"
+                data-flow="header-mobile"
                 className="inline-flex items-center justify-center gap-2 rounded-xl border border-[#25D366]/30 bg-[#25D366]/10 px-4 py-3 text-sm font-medium text-[#128C7E] transition-colors duration-150 hover:bg-[#25D366]/20"
               >
                 <WhatsAppIcon className="h-4 w-4" />

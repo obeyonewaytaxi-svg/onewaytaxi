@@ -29,6 +29,7 @@ export function ReviewsCta() {
                   href={siteConfig.googleReviewUrl}
                   target="_blank"
                   rel="noreferrer"
+                  data-flow="reviews-cta"
                   className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-brand-secondary px-6 py-3 text-sm font-bold uppercase tracking-wider text-slate-900 shadow-lg shadow-brand-secondary/25 transition-all hover:bg-brand-secondary-dark hover:-translate-y-0.5 sm:w-auto"
                 >
                   <Star className="h-4 w-4" />
@@ -39,6 +40,7 @@ export function ReviewsCta() {
                   href={whatsappReview}
                   target="_blank"
                   rel="noreferrer"
+                  data-flow="reviews-cta"
                   className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-brand-secondary px-6 py-3 text-sm font-bold uppercase tracking-wider text-slate-900 shadow-lg shadow-brand-secondary/25 transition-all hover:bg-brand-secondary-dark hover:-translate-y-0.5 sm:w-auto"
                 >
                   <WhatsAppIcon className="h-4 w-4 text-slate-900" />
@@ -47,6 +49,7 @@ export function ReviewsCta() {
               )}
               <a
                 href={`tel:${siteConfig.phone}`}
+                data-flow="reviews-cta"
                 className="inline-flex w-full items-center justify-center gap-2 rounded-xl border-2 border-slate-200 bg-white px-6 py-3 text-sm font-bold uppercase tracking-wider text-slate-700 transition-all hover:border-brand-secondary sm:w-auto"
               >
                 Call support

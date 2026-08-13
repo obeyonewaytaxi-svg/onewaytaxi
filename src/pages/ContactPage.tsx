@@ -10,12 +10,13 @@ import { Button } from '../components/ui/Button';
 import WhatsAppIcon from '../components/icons/WhatsAppIcon';
 import { ReviewsCta } from '../components/shared/ReviewsCta';
 import { siteConfig, waLink } from '../config/site';
+import { trackEvent } from '../lib/analytics';
 
 const contactChannels = [
-  { icon: Phone, iconClass: 'text-brand-secondary', title: 'Call us', value: siteConfig.phone, href: `tel:${siteConfig.phone.replace(/\s/g, '')}`, note: '24/7 booking & support' },
-  { icon: WhatsAppIcon, iconClass: 'text-[#25D366]', title: 'WhatsApp', value: 'Message us anytime', href: waLink('I want to book a taxi'), note: 'Fastest response' },
-  { icon: Mail, iconClass: 'text-brand-secondary', title: 'Email', value: siteConfig.email, href: `mailto:${siteConfig.email}`, note: 'For detailed queries' },
-  { icon: MapPin, iconClass: 'text-brand-secondary', title: 'Head office', value: 'Chennai, Tamil Nadu', href: 'https://maps.google.com/?q=Chennai%2C%20Tamil%20Nadu', note: 'Serving South India' },
+  { icon: Phone, iconClass: 'text-brand-secondary', title: 'Call us', value: siteConfig.phone, href: `tel:${siteConfig.phone.replace(/\s/g, '')}`, note: '24/7 booking & support', flow: 'contact-call' },
+  { icon: WhatsAppIcon, iconClass: 'text-[#25D366]', title: 'WhatsApp', value: 'Message us anytime', href: waLink('I want to book a taxi'), note: 'Fastest response', flow: 'contact-whatsapp' },
+  { icon: Mail, iconClass: 'text-brand-secondary', title: 'Email', value: siteConfig.email, href: `mailto:${siteConfig.email}`, note: 'For detailed queries', flow: 'contact-mail' },
+  { icon: MapPin, iconClass: 'text-brand-secondary', title: 'Head office', value: 'Chennai, Tamil Nadu', href: 'https://maps.google.com/?q=Chennai%2C%20Tamil%20Nadu', note: 'Serving South India', flow: 'contact-maps' },
 ];
 
 const PHONE_PATTERN = /^(\+?91[\-\s]?)?[6-9]\d{9}$/;
@@ -37,6 +38,7 @@ const ContactPage = () => {
     const text = `New booking enquiry:\nName: ${form.name.trim()}\nPhone: ${form.phone.trim()}\nMessage: ${form.message.trim()}`;
     window.open(waLink(text), '_blank');
     setSent(true);
+    trackEvent('contact_submit', { flow: 'contact_page', path: '/contact' });
   };
 
   return (
@@ -58,10 +60,11 @@ const ContactPage = () => {
 
       <Container className="py-12">
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {contactChannels.map(({ icon: Icon, iconClass, title, value, href, note }) => (
+          {contactChannels.map(({ icon: Icon, iconClass, title, value, href, note, flow }) => (
             <a
               key={title}
               href={href}
+              data-flow={flow}
               target={href.startsWith('http') ? '_blank' : undefined}
               rel={href.startsWith('http') ? 'noreferrer' : undefined}
               className="group rounded-2xl border border-slate-100 bg-white p-5 shadow-card transition-all hover:-translate-y-0.5 hover:border-brand-secondary/30 hover:shadow-card-hover"

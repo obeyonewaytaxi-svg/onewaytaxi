@@ -1,6 +1,7 @@
-import { Suspense, lazy, useEffect } from 'react';
+import { Suspense, lazy, useEffect, useRef } from 'react';
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import { SpeedInsights } from '@vercel/speed-insights/react';
+import { pageView } from './lib/analytics';
 import Header from './components/layout/Header';
 import Footer from './components/layout/Footer';
 import FloatingActions from './components/layout/FloatingActions';
@@ -44,6 +45,20 @@ function ScrollToTop() {
   return null;
 }
 
+function RouteTracker() {
+  const location = useLocation();
+  const first = useRef(true);
+  useEffect(() => {
+    // The gtag config fires the initial page_view; only track subsequent navigations.
+    if (first.current) {
+      first.current = false;
+      return;
+    }
+    pageView(location.pathname + location.search, document.title);
+  }, [location]);
+  return null;
+}
+
 function App() {
   return (
     <BrowserRouter>
@@ -53,6 +68,7 @@ function App() {
           <ErrorBoundary>
             <Suspense fallback={<Loading />}>
               <ScrollToTop />
+              <RouteTracker />
               <Routes>
               <Route path="/" element={<HomePage />} />
               <Route path="/services/:slug" element={<ServicePage />} />

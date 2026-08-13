@@ -119,11 +119,11 @@ const Footer = () => (
       </div>
 
       <div className="mt-10 grid gap-3 border-t border-white/10 pt-8 sm:grid-cols-3">
-        <a href={`tel:${siteConfig.phone}`} className="flex items-center gap-2.5 rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-slate-500 transition hover:border-brand-secondary hover:text-white min-h-[48px]">
+        <a href={`tel:${siteConfig.phone}`} data-flow="footer" className="flex items-center gap-2.5 rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-slate-500 transition hover:border-brand-secondary hover:text-white min-h-[48px]">
           <Phone className="h-4 w-4 text-brand-secondary" />
           {siteConfig.phoneDisplay}
         </a>
-        <a href={waLink('Hello Obey One Way Taxi, I would like to book a taxi.')} target="_blank" rel="noreferrer" className="flex items-center gap-2.5 rounded-xl border border-brand-secondary/30 bg-brand-secondary/10 px-4 py-3 text-sm text-brand-secondary transition hover:bg-brand-secondary hover:text-slate-900 min-h-[48px]">
+        <a href={waLink('Hello Obey One Way Taxi, I would like to book a taxi.')} target="_blank" rel="noreferrer" data-flow="footer" className="flex items-center gap-2.5 rounded-xl border border-brand-secondary/30 bg-brand-secondary/10 px-4 py-3 text-sm text-brand-secondary transition hover:bg-brand-secondary hover:text-slate-900 min-h-[48px]">
           <WhatsAppIcon className="h-4 w-4 text-[#25D366]" />
           WhatsApp support
         </a>

@@ -81,6 +81,7 @@ const CityPage = () => {
             href={waLink(`Hello Obey One Way Taxi, I would like to book a taxi from ${city.name}.`)}
             target="_blank"
             rel="noreferrer"
+            data-flow="city"
             className="inline-flex h-12 items-center gap-2 rounded-xl bg-[#F5C518] px-6 text-sm font-bold uppercase tracking-wider text-slate-900 transition-colors hover:bg-[#e0b212]"
           >
             Book Now

@@ -77,6 +77,7 @@ export function RouteCard({ route, className }: { route: Route; className?: stri
           <a
             href={bookNowLink}
             target="_blank"
+            data-flow="route-card"
             rel="noreferrer"
             className="flex h-10 items-center gap-2 rounded-xl bg-[#F5C518] px-4 text-xs font-bold uppercase tracking-wider text-black transition-all hover:bg-yellow-400 hover:shadow-lg hover:shadow-yellow-400/20"
           >

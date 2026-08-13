@@ -56,6 +56,7 @@ export function Hero() {
                 href={waLink('Hello Obey One Way Taxi, I would like to book a taxi.')}
                 target="_blank"
                 rel="noreferrer"
+                data-flow="hero"
                 className="inline-flex h-14 items-center justify-center gap-2.5 rounded-lg bg-[#F5C518] px-8 text-sm font-bold uppercase tracking-wider text-[#112340] transition-colors hover:bg-[#e0b212]"
               >
                 <WhatsAppIcon className="h-5 w-5 text-[#112340]" />

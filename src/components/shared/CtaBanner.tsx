@@ -32,6 +32,7 @@ export function CtaBanner({
                 href={waLink('Hello Obey One Way Taxi, I would like to book a taxi.')}
                 target="_blank"
                 rel="noreferrer"
+                data-flow="cta-banner"
                 className="inline-flex w-full items-center justify-center gap-2 rounded-xl border-2 border-white/20 bg-white/5 px-6 py-3 text-sm font-bold uppercase tracking-wider text-white transition-all hover:border-brand-secondary sm:w-auto"
               >
                 <WhatsAppIcon className="h-4 w-4 text-[#25D366]" />
@@ -39,6 +40,7 @@ export function CtaBanner({
               </a>
               <a
                 href={`tel:${siteConfig.phone}`}
+                data-flow="cta-banner"
                 className="inline-flex w-full items-center justify-center gap-2 rounded-xl px-4 py-3 text-sm font-semibold text-slate-300 transition hover:text-white sm:w-auto"
               >
                 <Phone className="h-4 w-4 text-brand-secondary" />

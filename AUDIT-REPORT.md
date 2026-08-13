@@ -172,7 +172,7 @@ Booking (empty/invalid-phone/same-city/unaccepted-city/round-trip toggle/valid W
 | **P2 — Performance** | WebP/AVIF + `srcSet`/`sizes` on hero/cab/coverage images; font `preconnect` + weight trim; code-split RHF/zod; preload LCP | 2–3 days | LCP 8.0→~2.5s, perf 65→85+; biggest CWV win |
 | **P3 — Accessibility** | Contrast pass (M2), select labels (L6), heading order (L7), logo aria (L8), tap targets (L9) | 2–3 days | A11y 78→90+; Lighthouse green |
 | **P4 — Status codes & canonical** | Real 404 for unknown paths (M3), 404-canonical consistency (L10) | 1 day | Cleaner crawl logs, correct semantics |
-| **P5 — Analytics & reviews** | Wire GA4 + Clarity (L4), Google review link (L5) | 1 day | Conversion measurement; review funnel |
+| **P5 — Analytics & reviews** | Wire GA4 + Clarity (L4), Google review link (L5) | 1 day | Conversion measurement; review funnel — **Wave 2 code DONE (awaiting GA4/Clarity IDs + googleReviewUrl)**: `initAnalytics`/`pageView`/`trackEvent` in `src/lib/analytics.ts`, SPA page_view tracking (`App.tsx` RouteTracker), delegated WhatsApp/tel/mail/outbound click tracking (`data-flow` labels on all CTAs), `scroll_depth` events, prerender-safe (`navigator.webdriver` guard), conversion events on `book_click` (BookingCard), `fare_calculate` (widget), `contact_submit` (contact form) |
 | **P6 — Ongoing** | Lighthouse CI budget (LCP<2.5s, A11y>90, no broken links); monthly crawl re-run (`scripts/audit/crawl.mjs`) | setup once | Prevents regression of every metric above |
 
 ---

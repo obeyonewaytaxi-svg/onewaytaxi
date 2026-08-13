@@ -20,6 +20,7 @@ const FloatingActions = () => {
         href={waLink('Hello Obey One Way Taxi, I would like to book a taxi.')}
         target="_blank"
         rel="noreferrer"
+        data-flow="floating"
         className="relative inline-flex h-12 w-12 items-center justify-center rounded-xl bg-[#25D366] text-white shadow-lg shadow-[#25d366]/25 transition-all duration-200 hover:scale-110 hover:shadow-xl"
         aria-label="Chat on WhatsApp"
       >
@@ -28,6 +29,7 @@ const FloatingActions = () => {
       </a>
       <a
         href={`tel:${siteConfig.phone}`}
+        data-flow="floating"
         className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-brand-secondary text-slate-900 shadow-lg shadow-brand-secondary/25 transition-all duration-200 hover:scale-110 hover:shadow-xl"
         aria-label="Call now"
       >

@@ -12,6 +12,7 @@ import { siteConfig, waLink } from '../../config/site';
 import { Input, Select, FieldLabel } from '../ui/Input';
 import { Button } from '../ui/Button';
 import { CarImage } from '../shared/CarImage';
+import { trackEvent } from '../../lib/analytics';
 
 function todayLocal(): string {
   const now = new Date();
@@ -124,6 +125,16 @@ export function BookingCard({ compact = false }: BookingCardProps) {
       phone: values.phone,
     });
     window.open(waLink(message), '_blank');
+    trackEvent('book_click', {
+      flow: 'booking_card',
+      trip_type: tripType,
+      vehicle: selectedCab,
+      pickup: values.pickup,
+      drop: values.drop,
+      date: values.date,
+      time: values.time,
+      path: window.location.pathname,
+    });
   };
 
   return (
