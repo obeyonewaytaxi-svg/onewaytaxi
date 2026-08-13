@@ -1,8 +1,9 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import http from 'node:http';
-import puppeteer from 'puppeteer';
+import puppeteer from 'puppeteer-core';
 
+const IS_VERCEL = process.env.VERCEL === '1';
 const DIST = path.join(process.cwd(), 'dist');
 const PORT = 45999;
 
@@ -28,7 +29,16 @@ const withTimeout = (promise, ms, label) =>
     ),
   ]);
 
-async function main() {
+async function resolveVercelChrome() {
+  const chromium = (await import('@sparticuz/chromium')).default;
+  return {
+    executablePath: await chromium.executablePath(),
+    args: chromium.args,
+    headless: true,
+  };
+}
+
+async function resolveLocalChrome() {
   let bundledChrome = null;
   try {
     bundledChrome = await puppeteer.executablePath();
@@ -42,6 +52,17 @@ async function main() {
     '/usr/bin/chromium-browser',
   ];
   const chromePath = chromeCandidates.find((p) => p && fs.existsSync(p));
+  return {
+    executablePath: chromePath,
+    args: ['--no-sandbox', '--disable-setuid-sandbox', '--disable-dev-shm-usage', '--disable-gpu'],
+    headless: true,
+  };
+}
+
+async function main() {
+  const launchConfig = IS_VERCEL
+    ? await resolveVercelChrome()
+    : await resolveLocalChrome();
 
   const sitemapPath = path.join(DIST, 'sitemap.xml');
   if (!fs.existsSync(sitemapPath)) {
@@ -94,15 +115,11 @@ async function main() {
 
   let browser;
   try {
-    browser = await puppeteer.launch({
-      headless: true,
-      executablePath: chromePath,
-      args: ['--no-sandbox', '--disable-setuid-sandbox', '--disable-dev-shm-usage', '--disable-gpu'],
-    });
+    browser = await puppeteer.launch(launchConfig);
   } catch (e) {
     server.close();
     console.error(`prerender failed: no Chrome/Chromium available (${e.message})`);
-    console.error('Install Chrome, set CHROME_PATH, or ensure the puppeteer npm package downloaded its bundled Chromium.');
+    console.error('Install Chrome, set CHROME_PATH, or ensure a Chromium binary is available.');
     process.exit(1);
   }
 
