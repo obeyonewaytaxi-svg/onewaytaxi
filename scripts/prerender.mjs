@@ -1,7 +1,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import http from 'node:http';
-import puppeteer from 'puppeteer-core';
+import puppeteer from 'puppeteer';
 
 const DIST = path.join(process.cwd(), 'dist');
 const PORT = 45999;
@@ -29,7 +29,12 @@ const withTimeout = (promise, ms, label) =>
   ]);
 
 async function main() {
+  let bundledChrome = null;
+  try {
+    bundledChrome = await puppeteer.executablePath();
+  } catch {}
   const chromeCandidates = [
+    bundledChrome,
     process.env.CHROME_PATH,
     'C:/Program Files/Google/Chrome/Application/chrome.exe',
     'C:/Program Files (x86)/Google/Chrome/Application/chrome.exe',
@@ -95,9 +100,10 @@ async function main() {
       args: ['--no-sandbox', '--disable-setuid-sandbox', '--disable-dev-shm-usage', '--disable-gpu'],
     });
   } catch (e) {
-    console.log(`prerender skipped (browser launch failed: ${e.message})`);
     server.close();
-    return;
+    console.error(`prerender failed: no Chrome/Chromium available (${e.message})`);
+    console.error('Install Chrome, set CHROME_PATH, or ensure the puppeteer npm package downloaded its bundled Chromium.');
+    process.exit(1);
   }
 
   const base = `http://localhost:${activePort}`;
@@ -142,13 +148,24 @@ async function main() {
     return lastError;
   };
 
+  const failed = [];
   for (const routePath of urls) {
     const err = await renderPage(routePath);
-    if (err) console.log(`prerender failed for ${routePath}: ${err.message}`);
+    if (err) {
+      console.error(`prerender failed for ${routePath}: ${err.message}`);
+      failed.push(routePath);
+    }
     done++;
     if (done % 10 === 0 || done === urls.length) {
       console.log(`prerendered ${done}/${urls.length}`);
     }
+  }
+
+  if (failed.length > 0) {
+    console.error(`prerender failed for ${failed.length}/${urls.length} routes — aborting build so the incomplete site is not deployed`);
+    failed.forEach((r) => console.error(`  failed: ${r}`));
+    server.close();
+    process.exit(1);
   }
 
   try {
