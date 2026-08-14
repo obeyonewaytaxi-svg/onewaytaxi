@@ -46,6 +46,42 @@ Review tracking (target: 25 reviews in 90 days):
 | Customer | Date | Platform | Link added to site? |
 | --- | --- | --- | --- |
 
+### GBP Quick-Start Kit (copy-paste ready)
+
+**Business description** (paste into the "Description" field — under the 750-char limit):
+
+```
+Obey One Way Taxi is a premium one-way and drop taxi service in Chennai serving Tamil
+Nadu and South India. We specialise in no-return-fare outstation cab travel — book a
+sedan, SUV, Innova or Innova Crysta for one-way journeys from Chennai to Bangalore,
+Coimbatore, Madurai, Trichy, Salem, Vellore, Ooty and Pondicherry. Transparent per-km
+pricing with no hidden charges, verified drivers, 24/7 support and instant booking on
+WhatsApp. Whether you need an airport drop, a hill-station weekend or a business
+transfer, you pay only for the distance you travel. Call or WhatsApp +91 86672 19259
+for an instant fare estimate.
+```
+
+**Service areas** (add all): Chennai, Bangalore, Coimbatore, Madurai, Trichy, Salem, Erode,
+Vellore, Pondicherry.
+
+**Photo checklist** (upload in this order): 1 cover image (front of a clean car), 3–5 fleet
+photos (sedan / SUV / Innova / Crysta), 1 driver-with-car photo, 1 booking/office photo.
+Real photos only — no watermarks or stock.
+
+**Review-request message** (send on WhatsApp to your last 10 customers):
+
+```
+Hi {name}! Thank you for riding with Obey One Way Taxi. Your feedback helps other
+travellers pick a trusted one-way taxi service. Please take 30 seconds to review us
+on Google: {paste your GBP review link here}. It means a lot to our team.
+— Obey One Way Taxi
+```
+
+Tip: send within 24h of a completed trip while the ride is fresh. Follow up once by
+voice call 2 days later if no reply. After your first 5 Google reviews, send me the GBP
+review-share URL and I will wire it into `src/config/site.ts` -> `googleReviewUrl` so the
+website's Reviews section links straight to it.
+
 ---
 
 ## 2. Directory listings (citations)
