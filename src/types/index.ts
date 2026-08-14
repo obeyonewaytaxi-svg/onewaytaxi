@@ -52,6 +52,7 @@ export type BlogPost = {
   title: string;
   excerpt: string;
   date: string;
+  datePublished?: string;
   readTime: string;
   category: string;
   content: string[];

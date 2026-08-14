@@ -1,10 +1,11 @@
 import { Link, useParams } from 'react-router-dom';
 import { Calendar, Clock, ArrowLeft, ArrowRight } from 'lucide-react';
 import { Seo } from '../lib/seo';
-import { breadcrumbSchema } from '../lib/schema';
+import { breadcrumbSchema, blogPostingSchema } from '../lib/schema';
 import { PageHeader } from '../components/layout/PageHeader';
 import { Container } from '../components/ui/Section';
 import { CtaBanner } from '../components/shared/CtaBanner';
+import { BlogContent } from '../components/shared/BlogContent';
 import { findBlogBySlug, blogPosts } from '../data/siteData';
 
 const BlogPostPage = () => {
@@ -36,11 +37,14 @@ const BlogPostPage = () => {
         description={post.excerpt}
         path={`/blog/${post.slug}`}
         type="article"
-        jsonLd={breadcrumbSchema([
-          { name: 'Home', path: '/' },
-          { name: 'Blog', path: '/blog' },
-          { name: post.title, path: `/blog/${post.slug}` },
-        ])}
+        jsonLd={[
+          breadcrumbSchema([
+            { name: 'Home', path: '/' },
+            { name: 'Blog', path: '/blog' },
+            { name: post.title, path: `/blog/${post.slug}` },
+          ]),
+          blogPostingSchema(post),
+        ]}
       />
 
       <PageHeader
@@ -64,13 +68,7 @@ const BlogPostPage = () => {
       <Container className="py-12">
         <article className="mx-auto max-w-3xl">
           <p className="text-sm leading-relaxed text-brand-muted">{post.excerpt}</p>
-          <div className="mt-8 space-y-6">
-            {post.content.map((paragraph, index) => (
-              <p key={index} className="text-base leading-8 text-slate-600">
-                {paragraph}
-              </p>
-            ))}
-          </div>
+          <BlogContent content={post.content} />
         </article>
 
         <div className="mx-auto mt-12 max-w-3xl">

@@ -172,6 +172,26 @@ export function webPageSchema(path: string, name: string, description: string) {
   };
 }
 
+export function blogPostingSchema(post: { slug: string; title: string; excerpt: string; date: string }) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    headline: post.title,
+    description: post.excerpt,
+    datePublished: post.date,
+    dateModified: post.date,
+    url: `${siteConfig.domain}/blog/${post.slug}`,
+    mainEntityOfPage: `${siteConfig.domain}/blog/${post.slug}`,
+    inLanguage: 'en',
+    author: { '@type': 'Organization', name: siteConfig.name, url: siteConfig.domain },
+    publisher: {
+      '@type': 'Organization',
+      name: siteConfig.name,
+      logo: { '@type': 'ImageObject', url: `${siteConfig.domain}/branding-image.png` },
+    },
+  };
+}
+
 export function contactPageSchema() {
   return {
     '@context': 'https://schema.org',
