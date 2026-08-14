@@ -128,7 +128,7 @@ export function organizationSchema() {
     '@type': 'Organization',
     name: siteConfig.name,
     url: siteConfig.domain,
-    logo: `${siteConfig.domain}/branding-image.png`,
+    logo: `${siteConfig.domain}/logo-square.png`,
     contactPoint: {
       '@type': 'ContactPoint',
       telephone: siteConfig.phone,
@@ -187,7 +187,7 @@ export function blogPostingSchema(post: { slug: string; title: string; excerpt: 
     publisher: {
       '@type': 'Organization',
       name: siteConfig.name,
-      logo: { '@type': 'ImageObject', url: `${siteConfig.domain}/branding-image.png` },
+      logo: { '@type': 'ImageObject', url: `${siteConfig.domain}/logo-square.png` },
     },
   };
 }
