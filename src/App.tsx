@@ -1,5 +1,5 @@
 import { Suspense, lazy, useEffect, useRef } from 'react';
-import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import { SpeedInsights } from '@vercel/speed-insights/react';
 import { pageView } from './lib/analytics';
 import Header from './components/layout/Header';
@@ -71,6 +71,7 @@ function App() {
               <RouteTracker />
               <Routes>
               <Route path="/" element={<HomePage />} />
+              <Route path="/services/one-way-taxi" element={<Navigate to="/one-way-taxi" replace />} />
               <Route path="/services/:slug" element={<ServicePage />} />
               <Route path="/one-way-taxi" element={<ServicePage />} />
               <Route path="/round-trip" element={<ServicePage />} />
@@ -83,6 +84,10 @@ function App() {
               <Route path="/routes/:slug" element={<RouteDetails />} />
               <Route path="/cities" element={<CitiesPage />} />
               <Route path="/cities/:slug" element={<CityPage />} />
+              <Route path="/drop-taxi-chennai" element={<CityPage citySlug="chennai" />} />
+              <Route path="/drop-taxi-coimbatore" element={<CityPage citySlug="coimbatore" />} />
+              <Route path="/drop-taxi-madurai" element={<CityPage citySlug="madurai" />} />
+              <Route path="/one-way-taxi-trichy" element={<CityPage citySlug="trichy" />} />
               <Route path="/about" element={<AboutPage />} />
               <Route path="/reviews" element={<ReviewsPage />} />
               <Route path="/faq" element={<FaqPage />} />

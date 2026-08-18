@@ -58,14 +58,15 @@ export function findCabByTitle(title: string): Cab | undefined {
 
 export const routes: Route[] = ([
   { name: 'Chennai → Coimbatore', origin: 'Chennai', destination: 'Coimbatore', distanceKm: 495, durationHours: '8h 30m', via: 'Salem', popular: true },
-  { name: 'Chennai → Madurai', origin: 'Chennai', destination: 'Madurai', distanceKm: 435, durationHours: '7h 30m', via: 'Trichy', popular: true },
-  { name: 'Chennai → Trichy', origin: 'Chennai', destination: 'Trichy', distanceKm: 330, durationHours: '5h 30m', via: 'Villupuram', popular: true },
+  { name: 'Chennai → Madurai', origin: 'Chennai', destination: 'Madurai', distanceKm: 435, durationHours: '7h 30m', via: 'Trichy', popular: true, description: 'The Chennai to Madurai corridor is one of Tamil Nadu\'s busiest intercity routes, covering 435 km via Trichy on well-maintained NH-45. The journey takes about 7 hours 30 minutes in a comfortable sedan. Madurai, the temple city, attracts pilgrims, business travellers, and weekend visitors alike. Our one-way drop taxi eliminates the return-fare burden — you pay only for the 435 km drop. Sedan fares start at ₹6,525 with transparent per-km pricing and no hidden charges.' },
+  { name: 'Chennai → Trichy', origin: 'Chennai', destination: 'Trichy', distanceKm: 330, durationHours: '5h 30m', via: 'Villupuram', popular: true, description: 'The Chennai to Trichy route covers 330 km via Villupuram on NH-45, taking approximately 5 hours 30 minutes. Trichy is a major junction city connecting pilgrims to Srirangam and Rockfort, and business travellers to central Tamil Nadu. Our one-way drop taxi service offers sedan fares from ₹4,950 with no return fare. Doorstep pickup from any Chennai neighbourhood and drop at your exact Trichy destination.' },
+  { name: 'Trichy → Chennai', origin: 'Trichy', destination: 'Chennai', distanceKm: 330, durationHours: '5h 30m', via: 'Villupuram', popular: true, description: 'The Trichy to Chennai return corridor covers 330 km via Villupuram, taking about 5 hours 30 minutes. Whether you are heading to Chennai for a flight, business meeting, or medical visit, our one-way drop taxi ensures a comfortable ride with transparent pricing. Sedan fares start at ₹4,950 with no return fare — pay only for the drop. Doorstep pickup from Srirangam, Woraiyur, Thillai Nagar, and all Trichy neighbourhoods.' },
+  { name: 'Vellore → Chennai', origin: 'Vellore', destination: 'Chennai', distanceKm: 140, durationHours: '2h 45m', via: 'Kancheepuram', popular: false, description: 'The Vellore to Chennai route is a quick 140 km drive via Kancheepuram, taking about 2 hours 45 minutes. This corridor is popular for hospital visits (CMC Vellore), business travel, and airport connections. Our one-way drop taxi offers sedan fares from ₹2,100 with no return fare. Doorstep pickup from Vellore Fort, Katpadi, Sathuvachari, and all major neighbourhoods.' },
   { name: 'Chennai → Salem', origin: 'Chennai', destination: 'Salem', distanceKm: 340, durationHours: '5h 45m', via: 'Ulundurpettai', popular: true },
   { name: 'Bangalore → Chennai', origin: 'Bangalore', destination: 'Chennai', distanceKm: 350, durationHours: '6h 15m', via: 'Vellore', popular: true },
   { name: 'Bangalore → Coimbatore', origin: 'Bangalore', destination: 'Coimbatore', distanceKm: 510, durationHours: '8h 45m', via: 'Salem', popular: true },
   { name: 'Coimbatore → Ooty', origin: 'Coimbatore', destination: 'Ooty', distanceKm: 170, durationHours: '3h 45m', via: 'Mettupalayam', popular: true },
   { name: 'Madurai → Chennai', origin: 'Madurai', destination: 'Chennai', distanceKm: 435, durationHours: '7h 30m', via: 'Trichy', popular: true },
-  { name: 'Trichy → Chennai', origin: 'Trichy', destination: 'Chennai', distanceKm: 330, durationHours: '5h 30m', via: 'Villupuram', popular: true },
   { name: 'Pondicherry → Chennai', origin: 'Pondicherry', destination: 'Chennai', distanceKm: 165, durationHours: '3h 15m', via: 'Tindivanam', popular: true },
   { name: 'Vellore → Bangalore', origin: 'Vellore', destination: 'Bangalore', distanceKm: 210, durationHours: '4h 15m', via: 'Chittoor', popular: true },
   { name: 'Erode → Chennai', origin: 'Erode', destination: 'Chennai', distanceKm: 400, durationHours: '6h 45m', via: 'Salem', popular: true },
@@ -93,7 +94,6 @@ export const routes: Route[] = ([
   { name: 'Salem → Erode', origin: 'Salem', destination: 'Erode', distanceKm: 60, durationHours: '1h 15m', via: 'NH-544', popular: false },
   { name: 'Bangalore → Vellore', origin: 'Bangalore', destination: 'Vellore', distanceKm: 210, durationHours: '4h 15m', via: 'Chittoor', popular: false },
   { name: 'Bangalore → Salem', origin: 'Bangalore', destination: 'Salem', distanceKm: 220, durationHours: '4h', via: 'Hosur', popular: false },
-  { name: 'Vellore → Chennai', origin: 'Vellore', destination: 'Chennai', distanceKm: 140, durationHours: '2h 45m', via: 'Kancheepuram', popular: false },
   { name: 'Pondicherry → Trichy', origin: 'Pondicherry', destination: 'Trichy', distanceKm: 200, durationHours: '3h 45m', via: 'Chidambaram', popular: false },
   { name: 'Erode → Salem', origin: 'Erode', destination: 'Salem', distanceKm: 60, durationHours: '1h 15m', via: 'NH-544', popular: false },
   { name: 'Ooty → Coimbatore', origin: 'Ooty', destination: 'Coimbatore', distanceKm: 170, durationHours: '3h 45m', via: 'Mettupalayam', popular: false },
@@ -142,12 +142,15 @@ export const services: Service[] = [
     metaDescription:
       'Book an affordable one-way drop taxi across Tamil Nadu & South India. Pay only for the distance you travel with transparent per-km rates and zero return fare.',
     longDescription:
-      'Book a one-way drop taxi and pay only for the drop direction of your journey. Our one-way taxi service removes the traditional return-fare burden, making intercity travel across Tamil Nadu and South India genuinely affordable.',
+      'Book a one-way drop taxi and pay only for the drop direction of your journey. Our one-way taxi service removes the traditional return-fare burden, making intercity travel across Tamil Nadu and South India genuinely affordable. Whether you are heading from Chennai to Coimbatore, Madurai to Bangalore, Trichy to Pondicherry, or any intercity route, you get a transparent per-km quote with no hidden charges. Every booking includes a verified, background-checked driver, a sanitized vehicle, and doorstep pickup and drop at your exact location. We operate 24/7 with sedan, SUV, Innova, and Crysta options to match your comfort and budget. Pay only for the distance you travel — no return fare, no empty-leg charges, no surprises.',
     features: [
       'No return fare — pay only for your drop',
       'Transparent per-km pricing with instant quotes',
       'Doorstep pickup and drop at any location',
       'Verified, background-checked drivers',
+      'Sedan, SUV, Innova, and Crysta options',
+      'GST-transparent invoicing on request',
+      '24/7 WhatsApp booking with instant confirmation',
     ],
   },
   {
@@ -248,7 +251,27 @@ export const faqs: FaqItem[] = [
   {
     question: 'What is a drop taxi and why choose Obey One Way Taxi?',
     answer:
-      'A drop taxi (or one-way cab) allows you to pay only for your single-direction trip without paying for the driver’s return journey. Obey One Way Taxi provides flat per-km pricing, doorstep pickup, and guaranteed clean cars across all major Tamil Nadu cities.',
+      'A drop taxi (or one-way cab) allows you to pay only for your single-direction trip without paying for the driver\'s return journey. Obey One Way Taxi provides flat per-km pricing, doorstep pickup, and guaranteed clean cars across all major Tamil Nadu cities.',
+  },
+  {
+    question: 'What is the minimum billing distance for a one-way taxi?',
+    answer:
+      'One-way bookings have a minimum billing of 130 km. For round-trip bookings the minimum is 250 km. If your actual distance is below the minimum, the minimum distance is charged.',
+  },
+  {
+    question: 'Which car types are available for one-way drop?',
+    answer:
+      'We offer Sedan (Etios/Dzire), SUV (Ertiga), Innova, and Innova Crysta for one-way drops. Sedans start at ₹15/km, SUVs and Innovas at ₹20/km, and Crystas at ₹24/km. Choose based on your comfort and luggage needs.',
+  },
+  {
+    question: 'Can I get a GST invoice for my one-way taxi booking?',
+    answer:
+      'Yes, GST invoices at 5% are available on request for all one-way taxi bookings. Contact our support team after your trip to receive an official invoice for expense claims.',
+  },
+  {
+    question: 'How far in advance should I book a one-way taxi?',
+    answer:
+      'We recommend booking at least 4 hours in advance for same-day travel. For early morning or late-night departures, booking the previous evening ensures better vehicle availability. Peak season and festival dates should be booked 2-3 days ahead.',
   },
 ];
 

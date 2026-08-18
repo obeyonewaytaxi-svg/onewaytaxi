@@ -11,8 +11,9 @@ import { CtaBanner } from '../components/shared/CtaBanner';
 import { Accordion } from '../components/ui/Accordion';
 import { getCityContent, getCityRoutes, getRelatedCities } from '../data/cityData';
 
-const CityPage = () => {
-  const { slug } = useParams<{ slug: string }>();
+const CityPage = ({ citySlug: propSlug }: { citySlug?: string } = {}) => {
+  const { slug: urlSlug } = useParams<{ slug: string }>();
+  const slug = propSlug ?? urlSlug;
   const city = slug ? getCityContent(slug.toLowerCase()) : undefined;
 
   if (!city) {
@@ -102,6 +103,26 @@ const CityPage = () => {
             {city.intro.map((paragraph) => (
               <p key={paragraph.slice(0, 40)} className="text-sm leading-relaxed text-slate-600">{paragraph}</p>
             ))}
+
+            {city.longDescription?.map((paragraph) => (
+              <p key={paragraph.slice(0, 40)} className="text-sm leading-relaxed text-slate-600">{paragraph}</p>
+            ))}
+
+            {city.pricePerKm && (
+              <Card>
+                <p className="text-xs font-semibold uppercase tracking-widest text-brand-secondary-text">Pricing per km</p>
+                <p className="mt-2 text-sm font-medium text-slate-900">{city.pricePerKm}</p>
+                {city.cabTypes && (
+                  <div className="mt-3 flex flex-wrap gap-2">
+                    {city.cabTypes.map((cab) => (
+                      <span key={cab} className="rounded-lg border border-slate-100 bg-slate-50 px-2.5 py-1.5 text-xs font-medium text-slate-600">
+                        {cab}
+                      </span>
+                    ))}
+                  </div>
+                )}
+              </Card>
+            )}
 
             <Card>
               <div className="flex items-center gap-2.5">

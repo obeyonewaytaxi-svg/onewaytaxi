@@ -9,9 +9,12 @@ export type CityContent = {
   metaTitle: string;
   metaDescription: string;
   intro: string[];
+  longDescription?: string[];
   areas: string[];
   landmarks: string[];
   airport: string;
+  pricePerKm?: string;
+  cabTypes?: string[];
   faqs: { q: string; a: string }[];
 };
 
@@ -30,12 +33,20 @@ export const cityContent: Record<string, CityContent> = {
       `Obey One Way Taxi runs premium drop taxi and one way cab services from Chennai to every major city in Tamil Nadu and South India. Whether you are heading to Coimbatore, Madurai, Trichy, Salem, Bangalore or Pondicherry, you pay only for one direction — no return fare taxi charges.`,
       `Every Chennai cab is a verified, sanitized vehicle with a professional chauffeur. You get an instant transparent fare on the route page and same-day WhatsApp confirmation. Book your Chennai drop taxi today at ${c}.`,
     ],
+    longDescription: [
+      `Chennai is the gateway to South India, and Obey One Way Taxi is the most trusted drop taxi service for intercity travel from Chennai. Our one way cab service covers every major corridor — Chennai to Coimbatore (505 km), Chennai to Madurai (435 km), Chennai to Bangalore (350 km), Chennai to Trichy (330 km), Chennai to Pondicherry (165 km), and Chennai to Salem (340 km). Each journey uses a transparent per-km fare with no return fare, no empty-leg charges, and no hidden costs.`,
+      `We operate sedan, SUV, Innova, and Crysta vehicles from all major Chennai neighbourhoods including T Nagar, Adyar, Anna Nagar, Velachery, OMR, Tambaram, Guindy, and Egmore. Airport transfers from Chennai International Airport (MAA) are available with flight tracking. Every driver is background-checked, every car is sanitized, and our dispatch team is available 24/7 on WhatsApp for instant booking confirmation.`,
+    ],
     areas: ['T Nagar', 'Adyar', 'Anna Nagar', 'Velachery', 'OMR', 'Tambaram', 'Guindy', 'Egmore'],
     landmarks: ['Chennai Airport', 'Chennai Central', 'Egmore Station', 'Marina Beach', 'IT Corridor OMR'],
     airport: 'Chennai International Airport (MAA)',
+    pricePerKm: 'Sedan from ₹15/km • SUV from ₹20/km • Innova from ₹20/km • Crysta from ₹24/km',
+    cabTypes: ['Sedan (Etios/Dzire)', 'SUV (Ertiga)', 'Innova', 'Innova Crysta'],
     faqs: [
       { q: 'Are tolls and parking charges included for Chennai drop taxis?', a: 'No, tolls and parking charges are excluded from the per-km rate and are payable at actuals. We will provide an estimate of these charges before confirming your booking on WhatsApp.' },
       { q: 'Do you pick up from Chennai Airport?', a: 'Yes. We offer airport pickup and drop taxi service from Chennai International Airport with flight tracking on request.' },
+      { q: 'What is the cheapest drop taxi from Chennai?', a: 'Our sedan (Etios/Dzire) at ₹15/km is the most affordable option for Chennai one way cabs. It covers up to 4 passengers with 2 bags.' },
+      { q: 'How do I book a Chennai drop taxi on WhatsApp?', a: 'Select your route and cab type on the route page, enter your pickup date and time, then tap "Send on WhatsApp". Our dispatch team confirms within minutes.' },
     ],
   },
   madurai: {
@@ -49,13 +60,20 @@ export const cityContent: Record<string, CityContent> = {
       `Travel from Madurai with Obey One Way Taxi and enjoy genuine one-way pricing. Our Madurai drop taxi service covers Chennai, Trichy, Coimbatore, Salem and Bangalore with comfortable sedans, SUVs and Innova cars.`,
       `The Madurai to Chennai one way cab is our most booked route — a 435 km journey with no return fare taxi charges. Get an instant quote, verified driver and door-to-door pickup at ${c}.`,
     ],
+    longDescription: [
+      `Madurai is the temple city of Tamil Nadu and one of the oldest continuously inhabited cities in India. Obey One Way Taxi provides drop taxi and one way cab service from Madurai to Chennai (435 km), Trichy (135 km), Coimbatore (220 km), Salem (170 km), and Bangalore (460 km). Our Madurai to Chennai corridor is the most popular, with sedan fares starting at ₹6,525 and no return fare.`,
+      `We pick up from Anna Nagar, KK Nagar, Simmakkal, Goripalayam, Mattuthavani, and all major Madurai neighbourhoods. Airport transfers from Madurai International Airport (IXM) are available. Every vehicle is sanitized, every driver is background-checked, and our dispatch team is available 24/7 on WhatsApp for instant booking confirmation.`,
+    ],
     areas: ['Anna Nagar', 'KK Nagar', 'Simmakkal', 'Goripalayam', 'Mattuthavani', 'Arappalayam'],
     landmarks: ['Madurai Meenakshi Temple', 'Madurai Junction', 'Vaigai Dam', 'Thirumalai Nayakkar Palace'],
     airport: 'Madurai International Airport (IXM)',
+    pricePerKm: 'Sedan from ₹15/km • SUV from ₹20/km • Innova from ₹20/km • Crysta from ₹24/km',
+    cabTypes: ['Sedan (Etios/Dzire)', 'SUV (Ertiga)', 'Innova', 'Innova Crysta'],
     faqs: [
       { q: 'How do I book a Madurai to Chennai one way cab?', a: 'Choose the Madurai to Chennai route page, select your cab and send the booking via WhatsApp. You pay only for the one-way drop.' },
       { q: 'Are there cheap one way cab options from Madurai?', a: 'Yes. Our sedan one way cab is the most affordable option, with transparent per-km pricing and no return fare.' },
       { q: 'Do you serve Madurai Meenakshi Temple pickups?', a: 'Yes, we offer doorstep pickup from anywhere in Madurai, including temples, hotels and the railway junction.' },
+      { q: 'What is the Madurai to Chennai one way cab fare?', a: 'The Madurai to Chennai route is 435 km. A sedan costs from ₹6,525, SUV from ₹8,700, Innova from ₹8,700, and Crysta from ₹10,440. Tolls are additional at actuals.' },
     ],
   },
   coimbatore: {
@@ -69,13 +87,20 @@ export const cityContent: Record<string, CityContent> = {
       `Obey One Way Taxi connects Coimbatore with Chennai, Bangalore, Ooty, Madurai, Salem and Trichy through premium drop taxi and one way cab service. Perfect for the scenic Coimbatore to Ooty hill run or long intercity journeys.`,
       `Enjoy transparent outstation cab fares, verified drivers and instant WhatsApp confirmation. Call or message ${c} to book your Coimbatore one way cab today.`,
     ],
+    longDescription: [
+      `Coimbatore is the textile capital of Tamil Nadu and a major gateway to the Nilgiris. Obey One Way Taxi provides drop taxi and one way cab service from Coimbatore to Chennai (505 km), Bangalore (365 km), Ooty (170 km), Madurai (220 km), Salem (165 km), and Trichy (215 km). Every route features transparent per-km pricing with no return fare — you pay only for the distance you travel.`,
+      `Our Coimbatore fleet includes sedans, SUVs, Innovas, and Crystas for both short Ooty hill runs and long highway journeys to Chennai and Bangalore. We pick up from RS Puram, Gandhipuram, Saibaba Colony, Peelamedu, and all major neighbourhoods. Airport transfers from Coimbatore International Airport (CJB) are available with flight tracking. Every driver is background-checked and our dispatch team operates 24/7.`,
+    ],
     areas: ['RS Puram', 'Gandhipuram', 'Saibaba Colony', 'Peelamedu', 'Kuniyamuthur', 'Race Course'],
     landmarks: ['Coimbatore Airport', 'Codissia Trade Fair', 'Marudamalai Temple', 'Siruvani Dam'],
     airport: 'Coimbatore International Airport (CJB)',
+    pricePerKm: 'Sedan from ₹15/km • SUV from ₹20/km • Innova from ₹20/km • Crysta from ₹24/km',
+    cabTypes: ['Sedan (Etios/Dzire)', 'SUV (Ertiga)', 'Innova', 'Innova Crysta'],
     faqs: [
       { q: 'How much does a Coimbatore drop taxi cost?', a: 'Fares follow transparent per-km pricing by cab type. The Coimbatore to Chennai one way cab is one of our most booked long routes.' },
       { q: 'Can I book a Coimbatore to Ooty taxi?', a: 'Yes. The Coimbatore to Ooty drive (170 km) is a favourite — book an SUV or Innova for comfort on the hill climb.' },
       { q: 'Do you offer Coimbatore airport transfers?', a: 'Yes, we provide airport pickup and drop from Coimbatore International Airport with flight tracking available.' },
+      { q: 'What is the cheapest drop taxi from Coimbatore?', a: 'Our sedan (Etios/Dzire) at ₹15/km is the most affordable option. For Ooty hill routes, we recommend an SUV at ₹20/km for better comfort on steep roads.' },
     ],
   },
   trichy: {
@@ -89,13 +114,20 @@ export const cityContent: Record<string, CityContent> = {
       `Trichy travellers trust Obey One Way Taxi for reliable drop taxi and one way cab service to Chennai, Madurai, Salem, Coimbatore and Pondicherry. Ideal for pilgrimage, business and weekend trips across Tamil Nadu.`,
       `Our Trichy taxi service offers transparent per-km fares with no return fare taxi charges, verified drivers and round-the-clock support at ${c}.`,
     ],
+    longDescription: [
+      `Trichy (Tiruchirappalli) is a major junction city in central Tamil Nadu, connecting pilgrims, business travellers, and weekend explorers across the state. Obey One Way Taxi provides drop taxi and one way cab service from Trichy to Chennai (330 km), Madurai (135 km), Salem (140 km), Coimbatore (215 km), and Pondicherry (215 km). Every route features transparent per-km pricing with no return fare.`,
+      `We pick up from Srirangam, Woraiyur, Thillai Nagar, KK Nagar, and all major Trichy neighbourhoods. Airport transfers from Tiruchirappalli International Airport (TRZ) are available. Our fleet includes sedans, SUVs, Innovas, and Crystas — choose based on your comfort and luggage needs. Every driver is background-checked and our dispatch team is available 24/7 on WhatsApp.`,
+    ],
     areas: ['Srirangam', 'Woraiyur', 'Thillai Nagar', 'KK Nagar', 'Ponmalaipatti', 'Uyyakondan Thirumalai'],
     landmarks: ['Rockfort Temple', 'Sri Ranganathaswamy Temple', 'Trichy Junction', 'Jambukeswarar Temple'],
     airport: 'Tiruchirappalli International Airport (TRZ)',
+    pricePerKm: 'Sedan from ₹15/km • SUV from ₹20/km • Innova from ₹20/km • Crysta from ₹24/km',
+    cabTypes: ['Sedan (Etios/Dzire)', 'SUV (Ertiga)', 'Innova', 'Innova Crysta'],
     faqs: [
       { q: 'What routes do Trichy drop taxis cover?', a: 'We cover Chennai, Madurai, Salem, Coimbatore and Pondicherry with one way and round trip options.' },
       { q: 'Is a Trichy to Chennai taxi available at night?', a: 'Yes. We operate 24/7 including nights and public holidays across Tamil Nadu.' },
       { q: 'Are tolls and parking charges included in Trichy cab fares?', a: 'No, tolls and parking charges are excluded from the base per-km rate and are payable at actuals. Our dispatch team will share an estimate of these fees during booking confirmation.' },
+      { q: 'How much is a Trichy to Chennai one way cab?', a: 'The Trichy to Chennai route is 330 km. A sedan costs from ₹4,950, SUV from ₹6,600, Innova from ₹6,600, and Crysta from ₹7,920. Tolls are additional at actuals.' },
     ],
   },
   salem: {

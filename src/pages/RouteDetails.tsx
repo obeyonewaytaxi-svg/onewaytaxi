@@ -64,6 +64,14 @@ const RouteDetails = () => {
       question: `Can I book a ${origin} to ${destination} drop taxi at night?`,
       answer: 'Absolutely. Our outstation cab service operates 24/7, including airport pickups and late-night drops between cities. Call or WhatsApp us anytime and we will dispatch a verified driver.',
     },
+    {
+      question: 'What car types are available for this route?',
+      answer: `We offer Sedan (Etios/Dzire from ₹15/km), SUV (Ertiga from ₹20/km), Innova (₹20/km), and Innova Crysta (₹24/km) for the ${origin} to ${destination} route. Choose based on your luggage and comfort needs.`,
+    },
+    {
+      question: 'Are tolls and parking included in the fare?',
+      answer: 'Tolls, state permits, and parking charges are excluded from the per-km base rate and are payable at actuals during the journey. We provide a transparent estimate of these costs before your trip is confirmed.',
+    },
   ];
 
   return (
@@ -142,6 +150,9 @@ const RouteDetails = () => {
                   </div>
                 ))}
               </div>
+              {route.description && (
+                <p className="mt-4 text-sm leading-relaxed text-slate-600">{route.description}</p>
+              )}
             </Card>
 
             <Card>

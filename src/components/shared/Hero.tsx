@@ -34,8 +34,8 @@ export function Hero() {
             </div>
 
             <h1 className="mt-8 max-w-3xl font-heading text-4xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl lg:leading-[1.1]">
-              Premium one-way <br className="hidden sm:block" />
-              <span className="text-[#F5C518]">taxi, simplified.</span>
+              One Way Drop Taxi <br className="hidden sm:block" />
+              <span className="text-[#F5C518]">Across Tamil Nadu &amp; South India</span>
             </h1>
 
             <p className="mt-6 max-w-xl text-base leading-relaxed text-slate-300 md:text-lg">

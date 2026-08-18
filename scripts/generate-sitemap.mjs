@@ -75,7 +75,14 @@ const routePages = routes.map((r) => ({
   changefreq: 'weekly',
 }));
 
-const allPages = [...staticPages, ...blogPages, ...cityPages, ...routePages];
+const aliasPages = [
+  { path: '/drop-taxi-chennai', priority: '0.7', changefreq: 'weekly' },
+  { path: '/drop-taxi-coimbatore', priority: '0.7', changefreq: 'weekly' },
+  { path: '/drop-taxi-madurai', priority: '0.7', changefreq: 'weekly' },
+  { path: '/one-way-taxi-trichy', priority: '0.7', changefreq: 'weekly' },
+];
+
+const allPages = [...staticPages, ...blogPages, ...cityPages, ...aliasPages, ...routePages];
 
 const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">

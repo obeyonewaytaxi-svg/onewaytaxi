@@ -20,6 +20,7 @@ export type Route = {
   durationHours: string;
   via: string;
   popular: boolean;
+  description?: string;
 };
 
 export type Service = {
