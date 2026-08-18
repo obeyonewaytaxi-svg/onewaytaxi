@@ -1,5 +1,5 @@
 import { Link, useParams } from 'react-router-dom';
-import { MapPin, Phone, ArrowRight, CheckCircle2, Plane } from 'lucide-react';
+import { MapPin, Phone, ArrowRight, CheckCircle2, Plane, Star } from 'lucide-react';
 import { Seo } from '../lib/seo';
 import { breadcrumbSchema, routeSchema, faqSchema } from '../lib/schema';
 import { siteConfig, waLink } from '../config/site';
@@ -10,6 +10,9 @@ import { RouteGrid } from '../components/shared/RouteGrid';
 import { CtaBanner } from '../components/shared/CtaBanner';
 import { Accordion } from '../components/ui/Accordion';
 import { getCityContent, getCityRoutes, getRelatedCities } from '../data/cityData';
+import { routes as allRoutes } from '../data/siteData';
+import { calculateFare } from '../lib/booking';
+import { formatINR } from '../lib/utils';
 
 const CityPage = ({ citySlug: propSlug }: { citySlug?: string } = {}) => {
   const { slug: urlSlug } = useParams<{ slug: string }>();
@@ -39,6 +42,7 @@ const CityPage = ({ citySlug: propSlug }: { citySlug?: string } = {}) => {
   }
 
   const cityRoutes = getCityRoutes(city.slug);
+  const inboundRoutes = allRoutes.filter((r) => r.destination.toLowerCase() === city.slug && r.origin.toLowerCase() !== city.slug);
   const relatedCities = getRelatedCities(city.slug);
   const cityPath = `/cities/${city.slug}`;
 
@@ -181,8 +185,62 @@ const CityPage = ({ citySlug: propSlug }: { citySlug?: string } = {}) => {
       </Container>
 
       {cityRoutes.length > 0 && (
-        <Section eyebrow="Popular routes" title={`One way taxi routes from ${city.name}`} className="pt-0">
-          <RouteGrid routes={cityRoutes.slice(0, 8)} />
+        <Section eyebrow="Routes from {city.name}" title={`One way taxi routes from ${city.name}`} className="pt-0">
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {cityRoutes.map((route) => {
+              const fare = calculateFare({ pickup: route.origin, drop: route.destination, cabTitle: 'SEDAN', tripType: 'One Way' });
+              return (
+                <Link
+                  key={route.slug}
+                  to={`/routes/${route.slug}`}
+                  className="group rounded-2xl border border-slate-100 bg-white p-4 shadow-card transition-all hover:-translate-y-0.5 hover:border-brand-secondary/30 hover:shadow-card-hover"
+                >
+                  <p className="text-sm font-bold text-slate-900 group-hover:text-brand-secondary-text">{route.name}</p>
+                  <p className="mt-1 text-xs text-slate-500">{route.distanceKm} km · {route.durationHours} · via {route.via}</p>
+                  <p className="mt-2 text-base font-bold text-slate-900">{fare.found ? formatINR(fare.fare) : '—'}</p>
+                  <p className="text-[10px] text-slate-500">Sedan · no return fare</p>
+                </Link>
+              );
+            })}
+          </div>
+        </Section>
+      )}
+
+      {inboundRoutes.length > 0 && (
+        <Section eyebrow="Routes to {city.name}" title={`Taxi to ${city.name} from other cities`} className="pt-0">
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {inboundRoutes.map((route) => {
+              const fare = calculateFare({ pickup: route.origin, drop: route.destination, cabTitle: 'SEDAN', tripType: 'One Way' });
+              return (
+                <Link
+                  key={route.slug}
+                  to={`/routes/${route.slug}`}
+                  className="group rounded-2xl border border-slate-100 bg-white p-4 shadow-card transition-all hover:-translate-y-0.5 hover:border-brand-secondary/30 hover:shadow-card-hover"
+                >
+                  <p className="text-sm font-bold text-slate-900 group-hover:text-brand-secondary-text">{route.name}</p>
+                  <p className="mt-1 text-xs text-slate-500">{route.distanceKm} km · {route.durationHours} · via {route.via}</p>
+                  <p className="mt-2 text-base font-bold text-slate-900">{fare.found ? formatINR(fare.fare) : '—'}</p>
+                  <p className="text-[10px] text-slate-500">Sedan · no return fare</p>
+                </Link>
+              );
+            })}
+          </div>
+        </Section>
+      )}
+
+      {city.localities && city.localities.length > 0 && (
+        <Section eyebrow="Pickup points" title={`${city.name} pickup locations`} className="pt-0">
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {city.localities.map((loc) => (
+              <Card key={loc.name}>
+                <div className="flex items-center gap-2">
+                  <MapPin className="h-4 w-4 text-brand-secondary" />
+                  <p className="text-sm font-bold text-slate-900">{loc.name}</p>
+                </div>
+                <p className="mt-2 text-xs leading-relaxed text-slate-600">{loc.description}</p>
+              </Card>
+            ))}
+          </div>
         </Section>
       )}
 
@@ -200,6 +258,25 @@ const CityPage = ({ citySlug: propSlug }: { citySlug?: string } = {}) => {
           ))}
         </div>
       </Section>
+
+      {city.testimonials && city.testimonials.length > 0 && (
+        <Section eyebrow="Reviews" title={`What travellers say about ${city.name} taxi`} className="pt-0">
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {city.testimonials.map((t) => (
+              <Card key={t.name}>
+                <div className="flex items-center gap-1">
+                  {Array.from({ length: t.rating }).map((_, i) => (
+                    <Star key={i} className="h-3.5 w-3.5 fill-yellow-400 text-yellow-400" />
+                  ))}
+                </div>
+                <p className="mt-2 text-sm leading-relaxed text-slate-600">"{t.quote}"</p>
+                <p className="mt-3 text-xs font-bold text-slate-900">{t.name}</p>
+                <p className="text-[10px] text-slate-500">{t.route}</p>
+              </Card>
+            ))}
+          </div>
+        </Section>
+      )}
 
       <Section eyebrow="FAQ" title={`Frequently asked questions about ${city.name} taxi`} className="pt-0">
         <div className="rounded-3xl border border-slate-100 bg-white p-6 shadow-card md:p-8">

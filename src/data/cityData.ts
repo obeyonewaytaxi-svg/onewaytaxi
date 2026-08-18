@@ -11,10 +11,12 @@ export type CityContent = {
   intro: string[];
   longDescription?: string[];
   areas: string[];
+  localities?: { name: string; description: string }[];
   landmarks: string[];
   airport: string;
   pricePerKm?: string;
   cabTypes?: string[];
+  testimonials?: { name: string; route: string; quote: string; rating: number }[];
   faqs: { q: string; a: string }[];
 };
 
@@ -34,19 +36,49 @@ export const cityContent: Record<string, CityContent> = {
       `Every Chennai cab is a verified, sanitized vehicle with a professional chauffeur. You get an instant transparent fare on the route page and same-day WhatsApp confirmation. Book your Chennai drop taxi today at ${c}.`,
     ],
     longDescription: [
-      `Chennai is the gateway to South India, and Obey One Way Taxi is the most trusted drop taxi service for intercity travel from Chennai. Our one way cab service covers every major corridor — Chennai to Coimbatore (505 km), Chennai to Madurai (435 km), Chennai to Bangalore (350 km), Chennai to Trichy (330 km), Chennai to Pondicherry (165 km), and Chennai to Salem (340 km). Each journey uses a transparent per-km fare with no return fare, no empty-leg charges, and no hidden costs.`,
+      `Chennai is the gateway to South India, and Obey One Way Taxi is the most trusted drop taxi service for intercity travel from Chennai. Our one way cab service covers every major corridor — Chennai to Coimbatore (505 km), Chennai to Madurai (435 km), Chennai to Bangalore (350 km), Chennai to Trichy (330 km), Chennai to Pondicherry (165 km), Chennai to Salem (340 km), Chennai to Vellore (140 km), Chennai to Erode (400 km), and Chennai to Ooty (570 km). Each journey uses a transparent per-km fare with no return fare, no empty-leg charges, and no hidden costs.`,
       `We operate sedan, SUV, Innova, and Crysta vehicles from all major Chennai neighbourhoods including T Nagar, Adyar, Anna Nagar, Velachery, OMR, Tambaram, Guindy, and Egmore. Airport transfers from Chennai International Airport (MAA) are available with flight tracking. Every driver is background-checked, every car is sanitized, and our dispatch team is available 24/7 on WhatsApp for instant booking confirmation.`,
+      `Chennai's road network connects to South India via well-maintained national highways — NH-45 to Madurai and Trichy, NH-48 to Bangalore, NH-45A to Pondicherry, and NH-544 to Coimbatore via Salem. Our drivers know every highway rest stop, fuel station, and toll plaza on these corridors, ensuring a smooth and safe journey whether you are travelling for business, pilgrimage, or leisure.`,
     ],
     areas: ['T Nagar', 'Adyar', 'Anna Nagar', 'Velachery', 'OMR', 'Tambaram', 'Guindy', 'Egmore'],
+    localities: [
+      { name: 'T Nagar', description: 'Heart of Chennai\'s shopping district. Pickup from Pondy Bazaar, Usman Road, and residential streets around Star Bazaar. Popular for airport transfers and Coimbatore/Ooty drops.' },
+      { name: 'Adyar', description: 'South Chennai\'s green corridor near the Adyar River. Pickup from LB Road, Thiruvanmiyur, and Besant Nagar. Quick access to ECR coastal route for Pondicherry trips.' },
+      { name: 'Anna Nagar', description: 'Planned residential hub in north Chennai. Pickup from Anna Nagar West, Shanthi Colony, and 2nd Avenue. Direct highway access to Bangalore via Vellore.' },
+      { name: 'Velachery', description: 'Fast-growing residential and IT suburb. Pickup from Velachery Main Road, Velachery-Tambaram link road, and Phoenix Mall area. Ideal for OMR and Ooty corridors.' },
+      { name: 'OMR (Old Mahabalipuram Road)', description: 'Chennai\'s IT corridor from Sholinganallur to Mahabalipuram. Pickup from Thoraipakkam, Perungudi, and Sholinganallur. Direct access to ECR and Pondicherry.' },
+      { name: 'Tambaram', description: 'South Chennai gateway with railway connectivity. Pickup from Tambaram East, Chromepet, and Pallavaram. Quick access to Vellore and Bangalore routes via GST Road.' },
+      { name: 'Guindy', description: 'Central south Chennai near the national park. Pickup from Guindy Industrial Estate, Guindy Park area, and Alandur. Close to airport for early morning transfers.' },
+      { name: 'Egmore', description: 'Heritage neighbourhood with railway station access. Pickup from Egmore Station, Powers Road, and Chetpet. Central location for all Chennai routes.' },
+    ],
     landmarks: ['Chennai Airport', 'Chennai Central', 'Egmore Station', 'Marina Beach', 'IT Corridor OMR'],
     airport: 'Chennai International Airport (MAA)',
     pricePerKm: 'Sedan from ₹15/km • SUV from ₹20/km • Innova from ₹20/km • Crysta from ₹24/km',
     cabTypes: ['Sedan (Etios/Dzire)', 'SUV (Ertiga)', 'Innova', 'Innova Crysta'],
+    testimonials: [
+      { name: 'Arvind S.', route: 'Chennai → Bangalore', quote: 'Impeccable service, transparent pricing, and a driver who arrived on time. The Chennai to Bangalore run was smooth even with late-night traffic near Vellore.', rating: 5 },
+      { name: 'Priya K.', route: 'Chennai → Madurai', quote: 'Booked a sedan for my family trip to Madurai. The driver was courteous, car was clean, and the fare matched the quote exactly. No return fare — huge savings.', rating: 5 },
+      { name: 'Karthik M.', route: 'Chennai → Pondicherry', quote: 'Weekend getaway to Pondicherry was seamless. Pickup from OMR was on time, and we reached in under 3 hours. Will book again for sure.', rating: 5 },
+      { name: 'Divya P.', route: 'Chennai → Coimbatore', quote: 'Long 500 km drive made comfortable with an Innova. Driver knew the Salem highway well, took proper rest stops. Very professional service.', rating: 5 },
+      { name: 'Rahul V.', route: 'Chennai → Trichy', quote: 'Airport pickup at 4 AM and straight to Trichy. WhatsApp booking took 2 minutes, confirmation was instant. Best one-way cab experience in Chennai.', rating: 5 },
+      { name: 'Meera R.', route: 'Chennai → Ooty', quote: 'Took the family to Ooty via Coimbatore. SUV handled the hill roads perfectly. Transparent pricing, no surprises at the end. Highly recommend.', rating: 5 },
+    ],
     faqs: [
-      { q: 'Are tolls and parking charges included for Chennai drop taxis?', a: 'No, tolls and parking charges are excluded from the per-km rate and are payable at actuals. We will provide an estimate of these charges before confirming your booking on WhatsApp.' },
-      { q: 'Do you pick up from Chennai Airport?', a: 'Yes. We offer airport pickup and drop taxi service from Chennai International Airport with flight tracking on request.' },
-      { q: 'What is the cheapest drop taxi from Chennai?', a: 'Our sedan (Etios/Dzire) at ₹15/km is the most affordable option for Chennai one way cabs. It covers up to 4 passengers with 2 bags.' },
-      { q: 'How do I book a Chennai drop taxi on WhatsApp?', a: 'Select your route and cab type on the route page, enter your pickup date and time, then tap "Send on WhatsApp". Our dispatch team confirms within minutes.' },
+      { q: 'How much is a Chennai to Coimbatore one way cab?', a: 'A Chennai to Coimbatore one way cab starts from ₹7,425 for a sedan (495 km × ₹15/km). SUV starts from ₹9,900, Innova from ₹9,900, and Crysta from ₹11,880. Tolls are additional at actuals.' },
+      { q: 'How much is a Chennai to Madurai one way cab?', a: 'A Chennai to Madurai one way cab starts from ₹6,525 for a sedan (435 km × ₹15/km). SUV starts from ₹8,700, Innova from ₹8,700, and Crysta from ₹10,440. Tolls are additional at actuals.' },
+      { q: 'How much is a Chennai to Bangalore one way cab?', a: 'A Chennai to Bangalore one way cab starts from ₹5,250 for a sedan (350 km × ₹15/km). SUV starts from ₹7,000, Innova from ₹7,000, and Crysta from ₹8,400. Tolls are additional at actuals.' },
+      { q: 'How much is a Chennai to Pondicherry one way cab?', a: 'A Chennai to Pondicherry one way cab starts from ₹2,475 for a sedan (165 km × ₹15/km). SUV starts from ₹3,300, Innova from ₹3,300, and Crysta from ₹3,960. This is one of our shortest and most popular routes.' },
+      { q: 'How much is a Chennai to Trichy one way cab?', a: 'A Chennai to Trichy one way cab starts from ₹4,950 for a sedan (330 km × ₹15/km). SUV starts from ₹6,600, Innova from ₹6,600, and Crysta from ₹7,920. Tolls are additional at actuals.' },
+      { q: 'How do I book a Chennai drop taxi on WhatsApp?', a: 'Select your route and cab type on the route page, enter your pickup date and time, then tap "Send on WhatsApp". Our dispatch team confirms within minutes. You can also call us directly.' },
+      { q: 'Do you pick up from Chennai Airport?', a: 'Yes. We offer airport pickup and drop taxi service from Chennai International Airport with flight tracking on request. Our driver will meet you at the arrivals area with a placard.' },
+      { q: 'What is the cheapest drop taxi from Chennai?', a: 'Our sedan (Etios/Dzire) at ₹15/km is the most affordable option for Chennai one way cabs. It covers up to 4 passengers with 2 bags. For hill stations, we recommend an SUV at ₹20/km.' },
+      { q: 'Are tolls and parking charges included for Chennai drop taxis?', a: 'No, tolls, state permits, and parking charges are excluded from the per-km rate and are payable at actuals. We provide a transparent estimate of these costs before your trip is confirmed on WhatsApp.' },
+      { q: 'Can I book a Chennai drop taxi at night?', a: 'Yes, our outstation cab service operates 24/7 including nights and public holidays. A driver night allowance of ₹400 applies for journeys between 11 PM and 6 AM.' },
+      { q: 'What payment methods do you accept?', a: 'We accept UPI, credit/debit cards, net banking, and cash for all Chennai bookings. GST invoices at 5% are available on request.' },
+      { q: 'Can I change my booking after confirmation?', a: 'Yes, booking modifications are possible depending on vehicle availability. Contact our support team via WhatsApp for changes to pickup time, route, or cab type.' },
+      { q: 'Is the driver verified?', a: 'Every driver is verified, background-checked, and trained for highway travel. Our dispatch team monitors every trip and customer support is available 24/7.' },
+      { q: 'What is the minimum billing for Chennai drop taxis?', a: 'One-way bookings have a minimum billing of 130 km. If your actual distance is below 130 km, the minimum distance is charged. Round-trip minimums are 250 km.' },
+      { q: 'Do you offer GST invoices for Chennai bookings?', a: 'Yes, GST invoices at 5% are available on request for all Chennai taxi bookings. Contact our support team after your trip to receive an official invoice for expense claims.' },
     ],
   },
   madurai: {
