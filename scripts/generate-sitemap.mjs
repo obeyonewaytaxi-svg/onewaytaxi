@@ -79,7 +79,11 @@ const aliasPages = [
   { path: '/drop-taxi-chennai', priority: '0.7', changefreq: 'weekly' },
   { path: '/drop-taxi-coimbatore', priority: '0.7', changefreq: 'weekly' },
   { path: '/drop-taxi-madurai', priority: '0.7', changefreq: 'weekly' },
-  { path: '/one-way-taxi-trichy', priority: '0.7', changefreq: 'weekly' },
+  { path: '/drop-taxi-trichy', priority: '0.7', changefreq: 'weekly' },
+  { path: '/drop-taxi-salem', priority: '0.7', changefreq: 'weekly' },
+  { path: '/drop-taxi-vellore', priority: '0.7', changefreq: 'weekly' },
+  { path: '/drop-taxi-bangalore', priority: '0.7', changefreq: 'weekly' },
+  { path: '/drop-taxi-pondicherry', priority: '0.7', changefreq: 'weekly' },
 ];
 
 const allPages = [...staticPages, ...blogPages, ...cityPages, ...aliasPages, ...routePages];
