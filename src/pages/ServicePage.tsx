@@ -1,14 +1,15 @@
 import { Link, useLocation, useParams } from 'react-router-dom';
 import { ArrowRight, CheckCircle2, MapPin, Sparkles } from 'lucide-react';
 import { Seo } from '../lib/seo';
-import { serviceSchema, breadcrumbSchema } from '../lib/schema';
+import { serviceSchema, breadcrumbSchema, faqSchema } from '../lib/schema';
 import { PageHeader } from '../components/layout/PageHeader';
-import { Container } from '../components/ui/Section';
+import { Section, Container } from '../components/ui/Section';
 import { Card } from '../components/ui/Card';
 import { CtaBanner } from '../components/shared/CtaBanner';
 import { BookingCard } from '../components/booking/BookingCard';
 import { services, findServiceBySlug, popularRoutes } from '../data/siteData';
 import { RouteGrid } from '../components/shared/RouteGrid';
+import { Accordion } from '../components/ui/Accordion';
 
 const ServicePage = () => {
   const { slug: paramSlug } = useParams<{ slug: string }>();
@@ -63,6 +64,7 @@ const ServicePage = () => {
             { name: 'Home', path: '/' },
             { name: displayTitle, path: `/${service.slug}` },
           ]),
+          ...(service.faqs ? [faqSchema(service.faqs)] : []),
         ]}
       />
 
@@ -131,6 +133,17 @@ const ServicePage = () => {
         </div>
         <RouteGrid routes={popularRoutes} className="mt-6" />
       </section>
+
+      {service.faqs && service.faqs.length > 0 && (
+        <Section eyebrow="FAQ" title={`Frequently asked questions about ${displayTitle.toLowerCase()}`} className="pt-0">
+          <Accordion
+            items={service.faqs.map((f) => ({
+              question: f.question,
+              answer: f.answer,
+            }))}
+          />
+        </Section>
+      )}
 
       <section className="mx-auto max-w-7xl px-5 pb-12 md:px-8">
         <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">

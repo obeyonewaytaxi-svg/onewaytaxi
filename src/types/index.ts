@@ -32,6 +32,7 @@ export type Service = {
   longDescription: string;
   features: string[];
   icon: 'Truck' | 'MapPin' | 'Star' | 'Plane' | 'RotateCcw';
+  faqs?: FaqItem[];
 };
 
 export type FaqItem = {

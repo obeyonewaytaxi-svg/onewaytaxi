@@ -10,7 +10,7 @@ import { CtaBanner } from '../components/shared/CtaBanner';
 import { Accordion } from '../components/ui/Accordion';
 import CoverageMapSection from '../components/CoverageMapSection';
 import PricingSection from '../components/PricingSection';
-import { popularRoutes, reviews, faqs } from '../data/siteData';
+import { popularRoutes, reviews, faqs, blogPosts } from '../data/siteData';
 import PopularCities from '../components/PopularCities';
 
 const homeFaqs = faqs.slice(0, 5);
@@ -85,7 +85,35 @@ const HomePage = () => (
     </section>
 
     <CoverageMapSection />
-    
+
+    <section className="mx-auto max-w-7xl px-5 py-section md:px-8">
+      <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+        <div>
+          <p className="text-xs font-semibold uppercase tracking-widest text-brand-secondary-text">Blog</p>
+          <h2 className="mt-3 font-heading text-display-xs md:text-display-sm text-slate-900">Latest from our blog</h2>
+        </div>
+        <Link to="/blog" className="text-sm font-bold text-brand-secondary-text transition hover:text-slate-900">
+          View all posts →
+        </Link>
+      </div>
+      <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        {blogPosts.slice(0, 3).map((post) => (
+          <Link
+            key={post.slug}
+            to={`/blog/${post.slug}`}
+            className="group rounded-2xl border border-slate-100 bg-white p-5 shadow-card transition-all hover:-translate-y-0.5 hover:border-brand-secondary/30 hover:shadow-card-hover"
+          >
+            <p className="text-[10px] font-semibold uppercase tracking-wider text-brand-secondary-text">{post.category}</p>
+            <h3 className="mt-2 text-sm font-bold text-slate-900 group-hover:text-brand-secondary-text">{post.title}</h3>
+            <p className="mt-2 text-xs leading-relaxed text-brand-muted line-clamp-2">{post.excerpt}</p>
+            <span className="mt-3 inline-flex items-center gap-1.5 text-[10px] font-bold text-brand-secondary-text">
+              {post.readTime} <ArrowRight className="h-3 w-3" />
+            </span>
+          </Link>
+        ))}
+      </div>
+    </section>
+
     <section id="faq" className="mx-auto max-w-7xl px-5 py-section md:px-8">
       <div className="rounded-3xl border border-slate-100 bg-white p-6 shadow-card md:p-8">
         <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">

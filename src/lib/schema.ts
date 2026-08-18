@@ -4,10 +4,12 @@ import type { Route, Service, Review, FaqItem, Cab } from '../types';
 export function localBusinessSchema() {
   return {
     '@context': 'https://schema.org',
-    '@type': 'TaxiService',
+    '@type': 'LocalBusiness',
     '@id': `${siteConfig.domain}/#localbusiness`,
     name: siteConfig.name,
     description: siteConfig.description,
+    image: `${siteConfig.domain}/branding-image.png`,
+    logo: `${siteConfig.domain}/logo-square.png`,
     telephone: siteConfig.phone,
     email: siteConfig.email,
     address: {

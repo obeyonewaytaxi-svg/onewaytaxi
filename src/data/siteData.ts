@@ -152,6 +152,14 @@ export const services: Service[] = [
       'GST-transparent invoicing on request',
       '24/7 WhatsApp booking with instant confirmation',
     ],
+    faqs: [
+      { question: 'What is a one-way drop taxi?', answer: 'A one-way drop taxi is an intercity cab service where you pay only for the distance from your pickup to your destination. Unlike traditional round-trip taxis, there is no return fare or empty-leg charge — you pay for exactly what you use.' },
+      { question: 'How much does a one-way taxi cost?', answer: 'Fares follow transparent per-km pricing: Sedan from ₹15/km, SUV from ₹20/km, Innova from ₹20/km, and Crysta from ₹24/km. A ₹400 base fare applies. For example, Chennai to Coimbatore (495 km) starts from ₹7,825 in a sedan.' },
+      { question: 'Do I pay for the return trip?', answer: 'No. With a one-way drop taxi, you pay only for the drop direction. There is no return fare, no empty-leg charge, and no hidden costs. This is what makes one-way taxis significantly cheaper than round-trip bookings for single-direction travel.' },
+      { question: 'How do I book a one-way taxi on WhatsApp?', answer: 'Select your route and cab type on the route page, enter your pickup date and time, then tap "Send on WhatsApp". Our dispatch team confirms your booking within minutes with driver details and a transparent fare quote.' },
+      { question: 'Are tolls included in the fare?', answer: 'No, tolls, state permits, and parking charges are excluded from the per-km rate and are payable at actuals. We provide an estimate of these costs before your trip is confirmed on WhatsApp so there are no surprises.' },
+      { question: 'What cab options are available for one-way trips?', answer: 'We offer Sedan (Etios/Dzire) for up to 4 passengers with 2 bags, SUV (Ertiga) for up to 6 passengers with 3 bags, Innova for up to 7 passengers with 4 bags, and Innova Crysta for premium comfort with up to 7 passengers.' },
+    ],
   },
   {
     title: 'Round Trip',

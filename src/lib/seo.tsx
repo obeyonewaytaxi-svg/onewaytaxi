@@ -46,8 +46,10 @@ export function Seo({
       <meta property="og:url" content={url} />
       <meta property="og:site_name" content={siteConfig.name} />
       <meta property="og:image" content={image} />
+      <meta property="og:locale" content="en_IN" />
 
       <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:site" content="@obeyonewaytaxi" />
       <meta name="twitter:title" content={fullTitle} />
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={image} />
