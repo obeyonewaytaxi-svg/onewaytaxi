@@ -216,6 +216,46 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://obeyonewaytaxi.com/drop-taxi-chennai</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://obeyonewaytaxi.com/drop-taxi-coimbatore</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://obeyonewaytaxi.com/drop-taxi-madurai</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://obeyonewaytaxi.com/drop-taxi-trichy</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://obeyonewaytaxi.com/drop-taxi-salem</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://obeyonewaytaxi.com/drop-taxi-vellore</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://obeyonewaytaxi.com/drop-taxi-bangalore</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://obeyonewaytaxi.com/drop-taxi-pondicherry</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://obeyonewaytaxi.com/routes/chennai-to-coimbatore</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -229,6 +269,16 @@
     <loc>https://obeyonewaytaxi.com/routes/chennai-to-trichy</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://obeyonewaytaxi.com/routes/trichy-to-chennai</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://obeyonewaytaxi.com/routes/vellore-to-chennai</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://obeyonewaytaxi.com/routes/chennai-to-salem</loc>
@@ -252,11 +302,6 @@
   </url>
   <url>
     <loc>https://obeyonewaytaxi.com/routes/madurai-to-chennai</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://obeyonewaytaxi.com/routes/trichy-to-chennai</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -392,11 +437,6 @@
   </url>
   <url>
     <loc>https://obeyonewaytaxi.com/routes/bangalore-to-salem</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://obeyonewaytaxi.com/routes/vellore-to-chennai</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
