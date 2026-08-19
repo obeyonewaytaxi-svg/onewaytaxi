@@ -10,7 +10,7 @@ import { BookingCard } from '../components/booking/BookingCard';
 import { findRouteBySlug, cabs, routes } from '../data/siteData';
 import { RouteGrid } from '../components/shared/RouteGrid';
 import { calculateFare } from '../lib/booking';
-import { formatINR } from '../lib/utils';
+import { formatINR, makeSlug } from '../lib/utils';
 import { getCityContent } from '../data/cityData';
 import { Accordion } from '../components/ui/Accordion';
 
@@ -238,6 +238,26 @@ const RouteDetails = () => {
           </div>
         </Section>
       )}
+
+      {(() => {
+        const reverseSlug = `${makeSlug(destination)}-to-${makeSlug(origin)}`;
+        const reverseRoute = routes.find((r) => r.slug === reverseSlug);
+        if (!reverseRoute) return null;
+        return (
+          <Section eyebrow="Reverse route" title={`${destination} to ${origin} taxi`} className="pt-0">
+            <Link
+              to={`/routes/${reverseSlug}`}
+              className="group flex items-center justify-between rounded-2xl border border-slate-100 bg-white p-5 shadow-card transition-all hover:-translate-y-0.5 hover:border-brand-secondary/30 hover:shadow-card-hover"
+            >
+              <div>
+                <h3 className="text-base font-bold text-slate-900 group-hover:text-brand-secondary-text">{destination} to {origin} Taxi</h3>
+                <p className="mt-1 text-sm text-brand-muted">{reverseRoute.distanceKm} km · {reverseRoute.durationHours} via {reverseRoute.via}</p>
+              </div>
+              <ArrowRight className="h-5 w-5 text-brand-secondary-text transition-transform group-hover:translate-x-1" />
+            </Link>
+          </Section>
+        );
+      })()}
 
       <CtaBanner
         title={`Book your ${origin} to ${destination} taxi`}

@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, MapPin } from 'lucide-react';
 import { Seo } from '../lib/seo';
-import { localBusinessSchema, webSiteSchema, organizationSchema } from '../lib/schema';
+import { localBusinessSchema, webSiteSchema, organizationSchema, breadcrumbSchema } from '../lib/schema';
 import { Hero } from '../components/shared/Hero';
 import { StatsBar } from '../components/shared/StatsBar';
 import { RouteGrid } from '../components/shared/RouteGrid';
@@ -38,7 +38,8 @@ const HomePage = () => (
       jsonLd={[
         localBusinessSchema(),
         webSiteSchema(),
-        organizationSchema()
+        organizationSchema(),
+        breadcrumbSchema([{ name: 'Home', path: '/' }]),
       ]}
     />
     <Hero />
@@ -69,6 +70,40 @@ const HomePage = () => (
     <StatsBar />
 
     <PopularCities />
+
+    <section className="mx-auto max-w-7xl px-5 py-section md:px-8">
+      <div className="rounded-3xl border border-slate-100 bg-white p-6 shadow-card md:p-8">
+        <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-widest text-brand-secondary-text">Drop Taxi by City</p>
+            <h2 className="mt-3 font-heading text-display-xs md:text-display-sm text-slate-900">Find your city drop taxi</h2>
+          </div>
+          <p className="max-w-xl text-sm leading-relaxed text-brand-muted">
+            Book a one-way drop taxi from any major city in Tamil Nadu and South India.
+          </p>
+        </div>
+        <div className="mt-6 flex flex-wrap gap-3">
+          {[
+            { city: 'Chennai', slug: 'chennai' },
+            { city: 'Coimbatore', slug: 'coimbatore' },
+            { city: 'Madurai', slug: 'madurai' },
+            { city: 'Trichy', slug: 'trichy' },
+            { city: 'Salem', slug: 'salem' },
+            { city: 'Vellore', slug: 'vellore' },
+            { city: 'Bangalore', slug: 'bangalore' },
+            { city: 'Pondicherry', slug: 'pondicherry' },
+          ].map(({ city, slug }) => (
+            <Link
+              key={slug}
+              to={`/drop-taxi-${slug}`}
+              className="inline-flex items-center gap-1.5 rounded-xl border border-slate-200 bg-white px-4 py-2.5 text-sm font-medium text-slate-700 transition-all hover:border-brand-secondary hover:text-brand-secondary-text hover:shadow-sm"
+            >
+              <MapPin className="h-3.5 w-3.5" /> {city} Drop Taxi
+            </Link>
+          ))}
+        </div>
+      </div>
+    </section>
 
     <section id="reviews" className="mx-auto max-w-7xl px-5 py-section md:px-8">
       <div className="grid gap-10 lg:grid-cols-[1.2fr_0.8fr] lg:items-end">

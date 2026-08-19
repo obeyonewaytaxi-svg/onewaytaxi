@@ -176,6 +176,12 @@ export const services: Service[] = [
       'Transparent daily and per-km pricing',
       'Same verified driver for both directions',
     ],
+    faqs: [
+      { question: 'What is included in a round-trip booking?', answer: 'A round-trip booking includes the same cab and driver for both legs of your journey. You get door-to-door pickup and drop, transparent per-km pricing, and multi-day availability with driver accommodation if needed.' },
+      { question: 'How is round-trip pricing different from one-way?', answer: 'Round-trip pricing uses a slightly lower per-km rate since the driver gets a return fare. For example, sedan is ₹14/km on round trips vs ₹15/km on one-way. You pay for the total distance of both legs combined.' },
+      { question: 'Can I extend my round-trip duration?', answer: 'Yes, you can extend your trip by contacting our support team. Additional day charges apply based on your cab type. Driver night bata of ₹400 applies for journeys between 11 PM and 6 AM.' },
+      { question: 'Is driver night bata included in the round-trip fare?', answer: 'A base driver allowance is included. An additional ₹400 night bata applies for travel between 11:00 PM and 6:00 AM. For hill station trips, a ₹300 driver allowance applies additionally.' },
+    ],
   },
   {
     title: 'Airport Transfer',
@@ -192,6 +198,12 @@ export const services: Service[] = [
       'Premium vehicles for luggage-friendly travel',
       '24/7 availability for early morning and late night flights',
     ],
+    faqs: [
+      { question: 'Do you track flights for airport pickups?', answer: 'Yes, we monitor your flight in real time and automatically adjust your pickup time if there are delays. Our driver will be at the airport when you land, not when the flight was scheduled.' },
+      { question: 'Which airports do you serve?', answer: 'We provide airport transfers to and from Chennai (MAA), Bangalore (BLR), Coimbatore (CJB), Madurai (IXM), and Trichy (TRZ) airports. We also cover secondary airports on request.' },
+      { question: 'How early should I book my airport transfer?', answer: 'We recommend booking at least 4 hours in advance for domestic flights and 12 hours for international flights. However, we accept last-minute bookings subject to driver availability.' },
+      { question: 'What if my flight is delayed?', answer: 'We track all flight delays in real time and reschedule your pickup automatically. There is no extra charge for delay-adjusted pickups. Your driver will wait at the airport until you arrive.' },
+    ],
   },
   {
     title: 'Outstation Taxi',
@@ -207,6 +219,12 @@ export const services: Service[] = [
       'Hill-station and coastal route expertise',
       'Fixed per-km pricing with toll transparency',
       'Comfortable vehicles for long highway travel',
+    ],
+    faqs: [
+      { question: 'What is the minimum distance for an outstation booking?', answer: 'There is no strict minimum, but we recommend outstation bookings for distances over 100 km. For shorter intercity trips, our one-way drop taxi service offers better value.' },
+      { question: 'Can I book a multi-city outstation trip?', answer: 'Yes, you can plan a multi-city itinerary. Contact our support team with your route plan and we will provide a custom quote covering all stops and waiting time.' },
+      { question: 'Are hill station routes available?', answer: 'Yes, we cover popular hill stations including Ooty, Kodaikanal, Munnar, Coorg, and Yercaud. A ₹300 hill station driver allowance applies in addition to the per-km fare.' },
+      { question: 'What if I need to stop en route?', answer: 'Short rest stops are included at no extra charge. For extended stops (sightseeing, meals over 30 minutes), a waiting charge of ₹200/hour applies. Discuss your itinerary with the driver beforehand.' },
     ],
   },
 ];

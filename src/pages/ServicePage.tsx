@@ -95,7 +95,7 @@ const ServicePage = () => {
 
             <Card>
               <p className="text-xs font-semibold uppercase tracking-widest text-brand-secondary-text">How it works</p>
-              <h2 className="mt-3 font-heading text-lg font-bold text-slate-900">Book your {displayTitle.toLowerCase()} in minutes</h2>
+              <h2 className="mt-3 font-heading text-lg font-bold text-slate-900">How {displayTitle.toLowerCase()} works</h2>
               <div className="mt-4 grid gap-3 sm:grid-cols-3">
                 {['Enter pickup & drop', 'Choose your cab', 'Confirm on WhatsApp'].map((step, index) => (
                   <div key={step} className="rounded-xl border border-slate-100 bg-slate-50 p-4">
@@ -125,7 +125,7 @@ const ServicePage = () => {
         <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
           <div>
             <p className="text-xs font-semibold uppercase tracking-widest text-brand-secondary-text">Popular routes</p>
-            <h2 className="mt-3 font-heading text-display-xs md:text-display-sm text-slate-900">Most booked transfers</h2>
+            <h2 className="mt-3 font-heading text-display-xs md:text-display-sm text-slate-900">Popular {displayTitle.toLowerCase()} routes</h2>
           </div>
           <Link to="/routes" className="text-sm font-bold text-brand-secondary-text transition hover:text-slate-900">
             View all routes →

@@ -32,6 +32,24 @@ const cities = [
     description: 'Doorstep drop taxi from Salem with transparent pricing and driver support.',
     routes: '6+ routes',
   },
+  {
+    slug: 'vellore',
+    name: 'Vellore Drop Taxi',
+    description: 'Reliable one-way taxi from Vellore to Chennai, Bangalore and beyond.',
+    routes: '5+ routes',
+  },
+  {
+    slug: 'bangalore',
+    name: 'Bangalore Drop Taxi',
+    description: 'Cross-state drop taxi from Bangalore to Tamil Nadu cities with verified drivers.',
+    routes: '6+ routes',
+  },
+  {
+    slug: 'pondicherry',
+    name: 'Pondicherry Drop Taxi',
+    description: 'Scenic one-way taxi from Pondicherry to Chennai, Madurai and Trichy.',
+    routes: '4+ routes',
+  },
 ];
 
 const PopularCities = () => (
