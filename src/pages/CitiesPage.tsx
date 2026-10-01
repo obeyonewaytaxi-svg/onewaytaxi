@@ -59,7 +59,7 @@ const CitiesPage = () => (
   <>
     <Seo
       title="Drop Taxi Service Cities in South India"
-      description="Book a drop taxi near you from Chennai, Coimbatore, Madurai, Trichy, Salem, Erode, Vellore, Pondicherry and Bangalore. One way taxi and outstation cab service."
+      description="Book a drop taxi from Chennai, Coimbatore, Madurai, Trichy, Salem, Erode, Vellore, Pondicherry and Bangalore. One way taxi and outstation cab service."
       path="/cities"
       keywords={[
         'drop taxi near me',
@@ -101,7 +101,7 @@ const CitiesPage = () => (
                   {connectedRoutes.length}+ routes
                 </span>
               </div>
-              <Link to={`/cities/${key}`} className="mt-4 block text-base font-bold text-slate-900 transition-colors hover:text-brand-secondary-text">
+              <Link to={`/drop-taxi-${key}`} className="mt-4 block text-base font-bold text-slate-900 transition-colors hover:text-brand-secondary-text">
                 {city.tagline}
               </Link>
               <p className="mt-2 text-sm leading-relaxed text-brand-muted">{city.description}</p>
@@ -116,7 +116,7 @@ const CitiesPage = () => (
                   </Link>
                 ))}
               </div>
-              <Link to={`/cities/${key}`} className="mt-4 inline-flex items-center gap-1.5 text-xs font-bold text-brand-secondary-text transition-all duration-200 group-hover:gap-2.5">
+              <Link to={`/drop-taxi-${key}`} className="mt-4 inline-flex items-center gap-1.5 text-xs font-bold text-brand-secondary-text transition-all duration-200 group-hover:gap-2.5">
                 View {city.name} routes <ArrowRight className="h-3.5 w-3.5" />
               </Link>
             </article>

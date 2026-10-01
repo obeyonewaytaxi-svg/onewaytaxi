@@ -18,6 +18,11 @@ export function localBusinessSchema() {
       addressRegion: siteConfig.address.region,
       addressCountry: siteConfig.address.country,
     },
+    geo: {
+      '@type': 'GeoCoordinates',
+      latitude: siteConfig.geo.latitude,
+      longitude: siteConfig.geo.longitude,
+    },
     areaServed: siteConfig.areaServed,
     url: siteConfig.domain,
     priceRange: '₹₹',
@@ -29,11 +34,6 @@ export function localBusinessSchema() {
         closes: '23:59',
       },
     ],
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: '4.9',
-      reviewCount: '1820',
-    },
   };
 }
 

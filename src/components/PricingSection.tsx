@@ -112,7 +112,7 @@ const PricingSection = () => {
           </p>
           <p className="mt-4 inline-flex items-center gap-2 rounded-full border border-yellow-200 bg-white px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-slate-700">
             <span className="h-1.5 w-1.5 rounded-full bg-yellow-500" />
-            Rated 4.9★ by 1,820+ travellers
+            Rated 4.9★ across Google, Justdial &amp; WhatsApp
           </p>
         </div>
 

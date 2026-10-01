@@ -98,8 +98,7 @@ const Footer = () => (
           <ul className="mt-4 space-y-2.5 text-sm text-slate-500">
             {Object.values(cityContent).slice(0, 9).map((city) => (
               <li key={city.slug}>
-                <Link to={`/cities/${city.slug}`} className="transition hover:text-white">{city.name} Drop Taxi</Link>
-                <Link to={`/drop-taxi-${city.slug}`} className="transition hover:text-white ml-2 text-xs text-slate-600">({city.name.replace(' Drop Taxi', '')} One Way)</Link>
+                <Link to={`/drop-taxi-${city.slug}`} className="transition hover:text-white">{city.name} Drop Taxi</Link>
               </li>
             ))}
           </ul>

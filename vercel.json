@@ -3,7 +3,16 @@
   "outputDirectory": "dist",
   "redirects": [
     { "source": "/services/:slug", "destination": "/:slug", "permanent": true },
-    { "source": "/services", "destination": "/one-way-taxi", "permanent": true }
+    { "source": "/services", "destination": "/one-way-taxi", "permanent": true },
+    { "source": "/cities/chennai", "destination": "/drop-taxi-chennai", "permanent": true },
+    { "source": "/cities/coimbatore", "destination": "/drop-taxi-coimbatore", "permanent": true },
+    { "source": "/cities/madurai", "destination": "/drop-taxi-madurai", "permanent": true },
+    { "source": "/cities/trichy", "destination": "/drop-taxi-trichy", "permanent": true },
+    { "source": "/cities/salem", "destination": "/drop-taxi-salem", "permanent": true },
+    { "source": "/cities/erode", "destination": "/drop-taxi-erode", "permanent": true },
+    { "source": "/cities/vellore", "destination": "/drop-taxi-vellore", "permanent": true },
+    { "source": "/cities/bangalore", "destination": "/drop-taxi-bangalore", "permanent": true },
+    { "source": "/cities/pondicherry", "destination": "/drop-taxi-pondicherry", "permanent": true }
   ],
   "headers": [
     {

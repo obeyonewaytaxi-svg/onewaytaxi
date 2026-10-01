@@ -89,6 +89,7 @@ function App() {
               <Route path="/drop-taxi-madurai" element={<CityPage citySlug="madurai" />} />
               <Route path="/drop-taxi-trichy" element={<CityPage citySlug="trichy" />} />
               <Route path="/drop-taxi-salem" element={<CityPage citySlug="salem" />} />
+              <Route path="/drop-taxi-erode" element={<CityPage citySlug="erode" />} />
               <Route path="/drop-taxi-vellore" element={<CityPage citySlug="vellore" />} />
               <Route path="/drop-taxi-bangalore" element={<CityPage citySlug="bangalore" />} />
               <Route path="/drop-taxi-pondicherry" element={<CityPage citySlug="pondicherry" />} />

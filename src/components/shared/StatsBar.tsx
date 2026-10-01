@@ -5,9 +5,9 @@ import { Headphones, Star, Route, ThumbsUp } from 'lucide-react';
 
 const stats = [
   { value: 24, suffix: '/7', label: 'Support', icon: Headphones },
-  { value: 4.9, suffix: '★', label: 'Google rating', icon: Star },
+  { value: 4.9, suffix: '★', label: 'Average rating', icon: Star },
   { value: 40, suffix: '+', label: 'Routes covered', icon: Route },
-  { value: 1820, suffix: '+', label: 'Verified reviews', icon: ThumbsUp },
+  { value: 9, suffix: '', label: 'Service cities', icon: ThumbsUp },
 ];
 
 function Counter({ target, suffix }: { target: number; suffix: string }) {

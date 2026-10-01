@@ -76,7 +76,7 @@ const PopularCities = () => (
             </div>
             <h3 className="mt-4 text-base font-bold text-slate-900">{city.name}</h3>
             <p className="mt-2 text-sm leading-relaxed text-brand-muted">{city.description}</p>
-            <Link to={`/cities/${city.slug}`} className="mt-4 inline-flex items-center gap-1.5 text-xs font-bold text-brand-secondary-text transition-all duration-200 group-hover:gap-2.5">
+            <Link to={`/drop-taxi-${city.slug}`} className="mt-4 inline-flex items-center gap-1.5 text-xs font-bold text-brand-secondary-text transition-all duration-200 group-hover:gap-2.5">
               Read More
               <ArrowRight className="h-3.5 w-3.5" />
             </Link>

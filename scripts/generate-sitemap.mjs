@@ -64,7 +64,7 @@ const blogPages = blogSlugs.map((slug) => ({
 }));
 
 const cityPages = citySlugs.map((slug) => ({
-  path: `/cities/${slug}`,
+  path: `/drop-taxi-${slug}`,
   priority: '0.8',
   changefreq: 'weekly',
 }));
@@ -75,18 +75,7 @@ const routePages = routes.map((r) => ({
   changefreq: 'weekly',
 }));
 
-const aliasPages = [
-  { path: '/drop-taxi-chennai', priority: '0.7', changefreq: 'weekly' },
-  { path: '/drop-taxi-coimbatore', priority: '0.7', changefreq: 'weekly' },
-  { path: '/drop-taxi-madurai', priority: '0.7', changefreq: 'weekly' },
-  { path: '/drop-taxi-trichy', priority: '0.7', changefreq: 'weekly' },
-  { path: '/drop-taxi-salem', priority: '0.7', changefreq: 'weekly' },
-  { path: '/drop-taxi-vellore', priority: '0.7', changefreq: 'weekly' },
-  { path: '/drop-taxi-bangalore', priority: '0.7', changefreq: 'weekly' },
-  { path: '/drop-taxi-pondicherry', priority: '0.7', changefreq: 'weekly' },
-];
-
-const allPages = [...staticPages, ...blogPages, ...cityPages, ...aliasPages, ...routePages];
+const allPages = [...staticPages, ...blogPages, ...cityPages, ...routePages];
 
 const lastmod = new Date().toISOString().split('T')[0];
 

@@ -21,6 +21,10 @@ export type Route = {
   via: string;
   popular: boolean;
   description?: string;
+  directionNotes?: {
+    title: string;
+    paragraphs: string[];
+  };
 };
 
 export type Service = {
@@ -52,6 +56,7 @@ export type Review = {
 export type BlogPost = {
   slug: string;
   title: string;
+  seoTitle?: string;
   excerpt: string;
   date: string;
   datePublished?: string;

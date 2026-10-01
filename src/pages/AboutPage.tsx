@@ -63,7 +63,7 @@ const AboutPage = () => (
           <div className="absolute left-0 top-0 h-full w-1 bg-brand-secondary" />
           <p className="text-2xl font-bold text-brand-secondary-text">4.9★</p>
           <p className="mt-3 text-sm leading-relaxed text-slate-600">
-            Average Google rating from 1,820+ verified reviews — earned trip by trip through clean cars, clear pricing and on-time pickups.
+            Average rating from travellers across Google, Justdial and WhatsApp — earned trip by trip through clean cars, clear pricing and on-time pickups.
           </p>
         </Card>
         <Card className="relative overflow-hidden">

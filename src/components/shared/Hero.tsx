@@ -30,7 +30,7 @@ export function Hero() {
             
             <div className="inline-flex items-center gap-2 rounded-full bg-[#1a2d4a] border border-[#233859] px-4 py-1.5 text-[11px] font-bold uppercase tracking-widest text-[#F5C518]">
               <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-[#F5C518]" />
-              Rated 4.9★ by 1,820+ travellers
+              Rated 4.9★ across Google, Justdial &amp; WhatsApp
             </div>
 
             <h1 className="mt-8 max-w-3xl font-heading text-4xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl lg:leading-[1.1]">

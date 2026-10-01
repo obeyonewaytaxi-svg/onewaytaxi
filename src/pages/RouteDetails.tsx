@@ -155,6 +155,21 @@ const RouteDetails = () => {
               )}
             </Card>
 
+            {route.directionNotes && (
+              <Card>
+                <p className="text-xs font-semibold uppercase tracking-widest text-brand-secondary-text">Direction insight</p>
+                <h2 className="mt-3 font-heading text-lg font-bold text-slate-900">{route.directionNotes.title}</h2>
+                <div className="mt-4 space-y-3">
+                  {route.directionNotes.paragraphs.map((paragraph) => (
+                    <div key={paragraph} className="flex gap-3 rounded-xl border border-slate-50 bg-slate-50 p-4">
+                      <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-brand-secondary" />
+                      <p className="text-sm leading-relaxed text-slate-600">{paragraph}</p>
+                    </div>
+                  ))}
+                </div>
+              </Card>
+            )}
+
             <Card>
               <p className="text-xs font-semibold uppercase tracking-widest text-brand-secondary-text">Cab options</p>
               <h2 className="mt-3 font-heading text-lg font-bold text-slate-900">Choose your ride</h2>
@@ -228,7 +243,7 @@ const RouteDetails = () => {
             {relatedCities.map((city) => (
               <Link
                 key={city.slug}
-                to={`/cities/${city.slug}`}
+                to={`/drop-taxi-${city.slug}`}
                 className="inline-flex items-center gap-1.5 rounded-xl border border-slate-200 bg-white px-4 py-2.5 text-sm font-medium text-slate-700 transition-all hover:border-brand-secondary hover:text-brand-secondary-text"
               >
                 <MapPin className="h-3.5 w-3.5" />

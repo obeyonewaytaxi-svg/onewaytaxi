@@ -54,17 +54,17 @@ export function ReviewGrid({ reviews, className }: { reviews: Review[]; classNam
   );
 }
 
-export function RatingSummary({ rating = '4.9', count = '1,820+', className }: { rating?: string; count?: string; className?: string }) {
+export function RatingSummary({ rating = '4.9', count = 'across Google, Justdial & WhatsApp', className }: { rating?: string; count?: string; className?: string }) {
   return (
     <div className={cn('rounded-2xl border border-slate-100 bg-white p-5 shadow-card', className)}>
-      <p className="text-xs font-semibold uppercase tracking-wider text-brand-muted">Verified reviews</p>
+      <p className="text-xs font-semibold uppercase tracking-wider text-brand-muted">Average rating</p>
       <p className="mt-2 text-3xl font-bold text-slate-900">{rating} / 5</p>
       <div className="mt-2 flex items-center gap-0.5">
         {Array.from({ length: 5 }).map((_, i) => (
           <Star key={i} className="h-4 w-4 fill-amber-400 text-amber-400" />
         ))}
       </div>
-      <p className="mt-2 text-xs text-brand-muted">{count} happy travelers</p>
+      <p className="mt-2 text-xs text-brand-muted">{count}</p>
     </div>
   );
 }

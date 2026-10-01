@@ -33,7 +33,7 @@ const BlogPostPage = () => {
   return (
     <>
       <Seo
-        title={post.title}
+        title={post.seoTitle ?? post.title}
         description={post.excerpt}
         path={`/blog/${post.slug}`}
         type="article"

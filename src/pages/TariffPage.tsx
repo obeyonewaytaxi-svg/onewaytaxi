@@ -101,6 +101,40 @@ const TariffPage = () => (
     </Section>
 
     <Section
+      eyebrow="Fare facts at a glance"
+      title="Tariff facts that matter"
+      description="The exact rules behind every Obey One Way Taxi fare — no surprises at the end of the trip."
+    >
+      <div className="overflow-hidden rounded-3xl border border-slate-100 bg-white shadow-card">
+        <div className="overflow-x-auto">
+          <table className="w-full min-w-[640px] text-left text-sm">
+            <tbody>
+              {[
+                ['Base fare (included in every booking)', '₹400'],
+                ['Minimum billing — one way', '130 km'],
+                ['Minimum billing — round trip', '250 km'],
+                ['Driver night allowance (11 PM – 6 AM pickup)', '₹400 extra'],
+                ['Hill station / ghat allowance', '₹300 extra'],
+                ['GST', '5% only when an invoice is required'],
+                ['Tolls, state permits & parking', 'Payable at actuals, estimated in advance'],
+                ['No return fare on one-way drops', 'You pay only for the direction you travel'],
+              ].map(([label, value]) => (
+                <tr key={label} className="border-b border-slate-100 transition-colors last:border-0 hover:bg-brand-secondary/5">
+                  <td className="px-6 py-4 text-slate-600">{label}</td>
+                  <td className="px-6 py-4 text-right font-heading font-bold text-slate-900">{value}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <p className="mt-4 flex items-start gap-2 text-xs text-brand-muted">
+        <Info className="mt-0.5 h-3.5 w-3.5 shrink-0 text-brand-secondary" />
+        Minimum billing means short hops are charged at the minimum distance, not the actual kilometres.
+      </p>
+    </Section>
+
+    <Section
       eyebrow="What's included"
       title="Know your fare breakdown"
       description="Everything you need to understand before you book."

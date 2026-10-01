@@ -44,7 +44,7 @@ const CityPage = ({ citySlug: propSlug }: { citySlug?: string } = {}) => {
   const cityRoutes = getCityRoutes(city.slug);
   const inboundRoutes = allRoutes.filter((r) => r.destination.toLowerCase() === city.slug && r.origin.toLowerCase() !== city.slug);
   const relatedCities = getRelatedCities(city.slug);
-  const cityPath = `/cities/${city.slug}`;
+  const cityPath = `/drop-taxi-${city.slug}`;
 
   return (
     <>
@@ -186,6 +186,10 @@ const CityPage = ({ citySlug: propSlug }: { citySlug?: string } = {}) => {
 
       {cityRoutes.length > 0 && (
         <Section eyebrow="Routes from {city.name}" title={`One way taxi routes from ${city.name}`} className="pt-0">
+          <p className="mt-3 max-w-2xl text-sm leading-relaxed text-slate-600">
+            {city.name} drop taxi price starts from {city.pricePerKm ?? '₹15/km'} for a sedan with no return fare. Book a
+            {city.name} one way cab online or over WhatsApp — our {city.name} dispatch team accepts 24/7 drop taxi {city.name} requests every day of the week.
+          </p>
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {cityRoutes.map((route) => {
               const fare = calculateFare({ pickup: route.origin, drop: route.destination, cabTitle: 'SEDAN', tripType: 'One Way' });
@@ -249,7 +253,7 @@ const CityPage = ({ citySlug: propSlug }: { citySlug?: string } = {}) => {
           {relatedCities.map((related) => (
             <Link
               key={related.slug}
-              to={`/cities/${related.slug}`}
+              to={`/drop-taxi-${related.slug}`}
               className="inline-flex items-center gap-1.5 rounded-xl border border-slate-200 bg-white px-4 py-2.5 text-sm font-medium text-slate-700 transition-all hover:border-brand-secondary hover:text-brand-secondary-text"
             >
               <MapPin className="h-3.5 w-3.5" />
