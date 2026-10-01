@@ -10,6 +10,16 @@ export const siteConfig = {
   whatsapp: '918667219259',
   email: 'bookings@obeyonewaytaxi.com',
   googleReviewUrl: 'https://g.page/r/2sI1MGqBqn0/review', // Google Business Profile review link (Google Maps > Your Business > Share review form)
+  // Public off-site profiles. These become the `sameAs` array in the LocalBusiness/TaxiService
+  // schema, which tells Google these profiles describe the SAME business. Only add a URL here
+  // once the listing is live and its name/phone exactly match the NAP above.
+  profiles: {
+    google: '', // Google Business Profile / Google Maps listing URL
+    justdial: '',
+    sulekha: '',
+    facebook: '',
+    instagram: '',
+  },
   address: {
     locality: 'Chennai',
     region: 'Tamil Nadu',
@@ -23,6 +33,19 @@ export const siteConfig = {
     value: '4.9',
     sources: 'across Google, Justdial and WhatsApp',
   },
+  // Named cities we actually serve. Used for schema `areaServed` so the local signal is
+  // specific instead of the vague "South India".
+  serviceCities: [
+    'Chennai',
+    'Coimbatore',
+    'Madurai',
+    'Tiruchirappalli',
+    'Salem',
+    'Erode',
+    'Vellore',
+    'Puducherry',
+    'Bengaluru',
+  ],
   areaServed: 'South India',
   openingHours: 'Mo-Su 00:00-23:59',
   keywords:

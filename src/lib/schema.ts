@@ -2,9 +2,14 @@ import { siteConfig } from '../config/site';
 import type { Route, Service, Review, FaqItem, Cab } from '../types';
 
 export function localBusinessSchema() {
+  // TaxiService is the precise schema.org type (LocalBusiness > ... and Service > TaxiService).
+  // Google describes it as "a service for a vehicle for hire with a driver for local travel",
+  // which is exactly what this business sells, so it signals the category more clearly than
+  // the generic LocalBusiness.
+  const sameAs = Object.values(siteConfig.profiles).filter(Boolean);
   return {
     '@context': 'https://schema.org',
-    '@type': 'LocalBusiness',
+    '@type': ['LocalBusiness', 'TaxiService'],
     '@id': `${siteConfig.domain}/#localbusiness`,
     name: siteConfig.name,
     description: siteConfig.description,
@@ -23,7 +28,14 @@ export function localBusinessSchema() {
       latitude: siteConfig.geo.latitude,
       longitude: siteConfig.geo.longitude,
     },
-    areaServed: siteConfig.areaServed,
+    // Specific served cities beat a vague region for local matching.
+    areaServed: siteConfig.serviceCities.map((city) => ({
+      '@type': 'City',
+      name: city,
+    })),
+    // Emitted only once the off-site profiles exist; an empty sameAs array is omitted
+    // so we never publish an unverifiable identity claim.
+    ...(sameAs.length > 0 ? { sameAs } : {}),
     url: siteConfig.domain,
     priceRange: '₹₹',
     openingHoursSpecification: [
