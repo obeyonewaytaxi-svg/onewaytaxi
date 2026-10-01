@@ -8,7 +8,7 @@ declare global {
   }
 }
 
-const { ga4Id, clarityId } = siteConfig.analytics;
+const { clarityId } = siteConfig.analytics;
 
 // Puppeteer sets navigator.webdriver during prerender; skip analytics there
 // so we never pollute GA/Clarity with bot traffic from the build step.
@@ -26,16 +26,6 @@ function loadScript(src: string, id: string, async = true) {
 
 export function initAnalytics() {
   if (isPrerender) return;
-
-  if (ga4Id) {
-    window.dataLayer = window.dataLayer || [];
-    window.gtag = function gtag(...args: unknown[]) {
-      window.dataLayer!.push(args);
-    };
-    window.gtag('js', new Date());
-    window.gtag('config', ga4Id, { anonymize_ip: true });
-    loadScript(`https://www.googletagmanager.com/gtag/js?id=${ga4Id}`, 'gtag-js');
-  }
 
   if (clarityId) {
     if (!window.clarity) {
