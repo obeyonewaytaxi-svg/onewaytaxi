@@ -45,12 +45,21 @@ export type FaqItem = {
 };
 
 export type Review = {
+  // Reviewer name as shown on the source platform. Use 'Google reviewer' when the
+  // platform does not show a name, rather than inventing a person.
   name: string;
-  location: string;
-  route: string;
+  // Optional: only set when the reviewer's own review states the route / city.
+  // Left undefined rather than guessed, so the site never asserts a fact the
+  // customer didn't write.
+  location?: string;
+  route?: string;
   rating: number;
   quote: string;
-  date: string;
+  // Optional: only set when the review's date is actually known.
+  date?: string;
+  // Where the review was published. Drives the badge shown on the card so a
+  // reader can always tell which platform a quote came from.
+  source?: 'Google' | 'Justdial' | 'WhatsApp';
 };
 
 export type BlogPost = {

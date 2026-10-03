@@ -4,6 +4,9 @@ import type { Review } from '../../types';
 import { cn } from '../../lib/utils';
 
 export function ReviewCard({ review, className }: { review: Review; className?: string }) {
+  // location/route/date are only rendered when the source actually provided them,
+  // so the card never implies a detail the reviewer didn't state.
+  const context = [review.location, review.route].filter(Boolean).join(' · ');
   return (
     <article
       className={cn(
@@ -18,9 +21,7 @@ export function ReviewCard({ review, className }: { review: Review; className?: 
         </div>
         <div>
           <p className="text-sm font-bold text-slate-900">{review.name}</p>
-          <p className="text-xs text-brand-muted">
-            {review.location} · {review.route}
-          </p>
+          {context && <p className="text-xs text-brand-muted">{context}</p>}
         </div>
       </div>
       <div className="mt-3 flex items-center gap-0.5">
@@ -30,9 +31,14 @@ export function ReviewCard({ review, className }: { review: Review; className?: 
             className={cn('h-3.5 w-3.5', i < review.rating ? 'fill-amber-400 text-amber-400' : 'fill-slate-200 text-slate-200')}
           />
         ))}
-        <span className="ml-2 text-xs text-slate-500">{review.date}</span>
+        {review.date && <span className="ml-2 text-xs text-slate-500">{review.date}</span>}
       </div>
       <p className="mt-3 text-sm leading-relaxed text-slate-500">"{review.quote}"</p>
+      {review.source && (
+        <p className="mt-auto pt-3 text-[10px] font-semibold uppercase tracking-wider text-brand-muted">
+          via {review.source}
+        </p>
+      )}
     </article>
   );
 }
@@ -54,11 +60,14 @@ export function ReviewGrid({ reviews, className }: { reviews: Review[]; classNam
   );
 }
 
-export function RatingSummary({ rating = '4.9', count = 'across Google, Justdial & WhatsApp', className }: { rating?: string; count?: string; className?: string }) {
+export function RatingSummary({ count = '9 reviews on Google', className }: { count?: string; className?: string }) {
+  // Deliberately no numeric rating. The Google listing currently shows 9 reviews, which is
+  // too small a sample to publish a defensible average, and the real rating is visible on
+  // GBP anyway. Showing "4.9 / 5" here would repeat the unverifiable-rating problem that
+  // the aggregateRating removal fixed.
   return (
     <div className={cn('rounded-2xl border border-slate-100 bg-white p-5 shadow-card', className)}>
-      <p className="text-xs font-semibold uppercase tracking-wider text-brand-muted">Average rating</p>
-      <p className="mt-2 text-3xl font-bold text-slate-900">{rating} / 5</p>
+      <p className="text-xs font-semibold uppercase tracking-wider text-brand-muted">Reviewed on Google</p>
       <div className="mt-2 flex items-center gap-0.5">
         {Array.from({ length: 5 }).map((_, i) => (
           <Star key={i} className="h-4 w-4 fill-amber-400 text-amber-400" />

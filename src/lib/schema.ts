@@ -19,8 +19,10 @@ export function localBusinessSchema() {
     email: siteConfig.email,
     address: {
       '@type': 'PostalAddress',
+      streetAddress: siteConfig.address.streetAddress,
       addressLocality: siteConfig.address.locality,
       addressRegion: siteConfig.address.region,
+      postalCode: siteConfig.address.postalCode,
       addressCountry: siteConfig.address.country,
     },
     geo: {

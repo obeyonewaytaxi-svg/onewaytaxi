@@ -332,56 +332,44 @@ export const faqs: FaqItem[] = [
   },
 ];
 
+// Reviews republished from the business's public Google Business Profile.
+//
+// Integrity rules applied here:
+//  - Only verbatim text captured from the public Google listing is used. Nothing is composed.
+//  - Reviewer names are NOT invented. Google shows several of these reviews without a
+//    display name, so those are attributed to 'Google reviewer'.
+//  - `date` is omitted where the listing did not show one, rather than guessed.
+//  - `source: 'Google'` is set on every entry and rendered as a badge, so a reader can
+//    always see where a quote came from and go verify it.
+//
+// TODO(owner): paste the complete review text and reviewer display names from your GBP.
+// Several entries below are truncated at the point Google's public listing cut them off
+// (marked '…'), and none carry a date. Replace them with the full originals when you have
+// them — the shape already supports `date` and real `name` values.
 export const reviews: Review[] = [
   {
-    name: 'Arvind S.',
-    location: 'Chennai',
-    route: 'Chennai → Bangalore',
+    name: 'Google reviewer',
     rating: 5,
-    quote: 'Impeccable service, transparent pricing, and a driver who arrived on time. This feels like a luxury ride every time.',
-    date: 'July 2026',
+    quote:
+      'Excellent experience with Obey Oneway Taxi. The booking process was easy, the driver was punctual and courteous, and the journey was very comfortable. Great service at a reasonable price. Highly recommended!',
+    source: 'Google',
   },
   {
-    name: 'Meera R.',
-    location: 'Bangalore',
-    route: 'Bangalore → Ooty',
+    name: 'Google reviewer',
     rating: 5,
-    quote: 'Smooth booking, premium car, and the ride was comfortable from start to finish. Highly recommend Obey Taxi.',
-    date: 'June 2026',
+    quote:
+      'Excellent service from Obey Oneway Taxi! Very professional and friendly service. The driver was punctual, polite and drove safely. The vehicle was clean and …',
+    source: 'Google',
   },
   {
-    name: 'Sathish K.',
-    location: 'Coimbatore',
-    route: 'Coimbatore → Chennai',
+    name: 'Google reviewer',
     rating: 5,
-    quote: 'Fast response, no hidden fees, and a polished ride. The app experience felt premium and effortless.',
-    date: 'May 2026',
-  },
-  {
-    name: 'Divya P.',
-    location: 'Madurai',
-    route: 'Madurai → Chennai',
-    rating: 5,
-    quote: 'On-time pickup, clean car and a very courteous driver. The airport transfer was seamless.',
-    date: 'April 2026',
-  },
-  {
-    name: 'Rahul V.',
-    location: 'Trichy',
-    route: 'Trichy → Chennai',
-    rating: 4,
-    quote: 'Great value for a one-way drop. Booking through WhatsApp took under two minutes.',
-    date: 'March 2026',
-  },
-  {
-    name: 'Priya M.',
-    location: 'Salem',
-    route: 'Salem → Coimbatore',
-    rating: 5,
-    quote: 'The round trip booking was handled beautifully. Same driver, same car, zero stress.',
-    date: 'March 2026',
+    quote:
+      'Best taxi service I’ve used in a long time. Easy booking, fair pricing, and a very polite professional driver who knew the fastest routes. Will definitely be using them again since easy to communicate …',
+    source: 'Google',
   },
 ];
+
 
 export const blogPosts: BlogPost[] = [
   {
